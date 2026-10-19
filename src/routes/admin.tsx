@@ -169,7 +169,7 @@ function differs(a?: MetricsRow, b?: MetricsRow) {
   return METRIC_FIELDS.some((f) => (a?.[f.key] ?? null) !== (b?.[f.key] ?? null));
 }
 
-function Overview({ draft, published }: { draft?: MetricsRow; published?: MetricsRow }) {
+function Overview({ draft, published }: { draft?: MetricsRow | undefined; published?: MetricsRow | undefined }) {
   const pending = differs(draft, published);
   return (
     <div className="space-y-5">
@@ -204,7 +204,7 @@ function Overview({ draft, published }: { draft?: MetricsRow; published?: Metric
   );
 }
 
-function MetricsForm({ draft }: { draft?: MetricsRow }) {
+function MetricsForm({ draft }: { draft?: MetricsRow | undefined }) {
   const qc = useQueryClient();
   const [values, setValues] = useState<Record<MetricKey, string>>(() =>
     Object.fromEntries(METRIC_FIELDS.map((f) => [f.key, draft?.[f.key]?.toString() ?? ""])) as Record<MetricKey, string>,
@@ -235,7 +235,7 @@ function MetricsForm({ draft }: { draft?: MetricsRow }) {
     const errs: typeof errors = {};
     for (const f of METRIC_FIELDS) {
       const r = metricInputSchema.safeParse(values[f.key]);
-      if (!r.success) errs[f.key] = r.error.issues[0].message;
+      if (!r.success) errs[f.key] = r.error.issues[0]?.message ?? "Valor inválido.";
     }
     setErrors(errs);
     if (Object.keys(errs).length) return;

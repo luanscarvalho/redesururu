@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 import type { SiteSettings } from "@/lib/site-data";
 
-export function Footer({ settings }: { settings?: SiteSettings | null }) {
+export function Footer({ settings }: { settings?: SiteSettings | null | undefined }) {
   const form = settings?.general_form_url;
   return (
     <footer id="contato" className="border-t bg-surface">

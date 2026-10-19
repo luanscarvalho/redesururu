@@ -133,7 +133,7 @@ function About() {
 
 type Aud = { icon: LucideIcon; title: string; text: string; cta: string; href?: string | null | undefined; tone: string };
 
-function Audiences({ settings }: { settings?: import("@/lib/site-data").SiteSettings | null }) {
+function Audiences({ settings }: { settings?: import("@/lib/site-data").SiteSettings | null | undefined }) {
   const items: Aud[] = [
     {
       icon: GraduationCap, title: "Você que estuda.", cta: "Sou estudante", href: settings?.student_form_url,
@@ -274,7 +274,7 @@ function Territory() {
   );
 }
 
-function FinalCta({ settings }: { settings?: import("@/lib/site-data").SiteSettings | null }) {
+function FinalCta({ settings }: { settings?: import("@/lib/site-data").SiteSettings | null | undefined }) {
   return (
     <section className="file-pattern border-t py-14 sm:py-16">
       <div className="container-site max-w-3xl text-center">
