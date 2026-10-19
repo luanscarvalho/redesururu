@@ -13,9 +13,12 @@ export function NetworkArt({ className, label }: { className?: string; label: st
   const color = { a: "var(--accent)", p: "var(--primary)", h: "var(--highlight)" };
   return (
     <svg viewBox="0 0 390 260" className={className} role="img" aria-label={label}>
-      {EDGES.map(([a, b], i) => (
-        <line key={i} x1={A[0]} y1={A[1]} x2={B[0]} y2={B[1]}
-          stroke="var(--primary)" strokeOpacity="0.22" strokeWidth="1.5" />
+      {EDGES.map(([a, b], i) => {
+        const A = NODES[a]!;
+        const B = NODES[b]!;
+        return (
+          <line key={i} x1={A[0]} y1={A[1]} x2={B[0]} y2={B[1]}
+            stroke="var(--primary)" strokeOpacity="0.22" strokeWidth="1.5" />
         );
       })}
       {NODES.map(([x, y, c], i) => (
