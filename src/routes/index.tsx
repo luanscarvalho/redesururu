@@ -131,7 +131,7 @@ function About() {
   );
 }
 
-type Aud = { icon: LucideIcon; title: string; text: string; cta: string; href?: string | null; tone: string };
+type Aud = { icon: LucideIcon; title: string; text: string; cta: string; href?: string | null | undefined; tone: string };
 
 function Audiences({ settings }: { settings?: import("@/lib/site-data").SiteSettings | null }) {
   const items: Aud[] = [
@@ -223,7 +223,7 @@ function Results() {
   );
 }
 
-function HowItWorks({ formUrl, whatsapp }: { formUrl?: string | null; whatsapp?: string | null }) {
+function HowItWorks({ formUrl, whatsapp }: { formUrl?: string | null | undefined; whatsapp?: string | null | undefined }) {
   const steps = [
     { t: "Cadastre-se", d: "Compartilhe suas informações, interesses e necessidades pelo formulário." },
     { t: "Conecte-se", d: "Acompanhe o canal da REDE SURURU para conhecer oportunidades." },

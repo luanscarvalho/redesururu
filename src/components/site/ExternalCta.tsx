@@ -2,7 +2,7 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 /** Botão para links configuráveis. Sem link cadastrado, fica indisponível. */
-export function ExternalCta({ href, children, ...props }: { href?: string | null } & ButtonProps) {
+export function ExternalCta({ href, children, ...props }: { href?: string | null | undefined } & ButtonProps) {
   if (!href) {
     return (
       <Button {...props} disabled aria-disabled title="Link ainda não disponível">
