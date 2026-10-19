@@ -15,8 +15,9 @@ export function NetworkArt({ className, label }: { className?: string; label: st
     <svg viewBox="0 0 390 260" className={className} role="img" aria-label={label}>
       {EDGES.map(([a, b], i) => (
         <line key={i} x1={A[0]} y1={A[1]} x2={B[0]} y2={B[1]}
-          stroke="var(--primary)" strokeOpacity="0.22" strokeWidth="1.5" />); })}
-      ))}
+          stroke="var(--primary)" strokeOpacity="0.22" strokeWidth="1.5" />
+        );
+      })}
       {NODES.map(([x, y, c], i) => (
         <g key={i}>
           <circle cx={x} cy={y} r={c === "h" ? 9 : 6} fill={color[c]} />
