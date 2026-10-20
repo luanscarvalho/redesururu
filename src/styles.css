@@ -226,8 +226,8 @@
   .hero-title { font-size: 52px; line-height: 1.04; }
   .hero-line-finale { font-size: 76px; margin-top: 16px; }
   .hero-territory { width: 50%; right: -35px; top: 5px; }
-  .sururu-hero::before { inset: 305px -20% -500px -25%; transform: rotate(-9deg); }
-  .sururu-hero::after { inset: 292px -20% -500px -25%; transform: rotate(-9deg); }
+  .sururu-hero::before { inset: 305px -20% -500px -25%; transform: rotate(0deg); }
+  .sururu-hero::after { inset: 292px -20% -500px -25%; transform: rotate(0deg); }
   .hero-support::before { display: none; }
   .hero-support { grid-template-columns: minmax(0, 620px) 230px; justify-content: space-between; padding-top: 24px; gap: 0 60px; }
 }
