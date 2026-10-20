@@ -90,7 +90,7 @@ function Hero() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="highlight"><a href="#participar">Quero participar</a></Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
               <a href="#resultados">Conheça os resultados</a>
             </Button>
           </div>
