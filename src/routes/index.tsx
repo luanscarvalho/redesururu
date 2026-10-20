@@ -61,10 +61,11 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
 
 function Hero() {
   return (
-    <section className="file-pattern border-b">
-      <div className="container-site grid items-center gap-8 py-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:py-20">
+    <section className="relative overflow-hidden border-b bg-primary text-primary-foreground">
+      <div aria-hidden className="hero-glow absolute inset-0" />
+      <div className="container-site relative grid items-center gap-8 py-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:py-20">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full border bg-surface px-3 py-1.5 text-xs font-semibold text-accent">
+          <p className="inline-flex items-center gap-2 rounded-full border border-highlight/40 bg-primary-foreground/5 px-3 py-1.5 text-xs font-semibold text-highlight backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-highlight opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-highlight" />
@@ -79,20 +80,22 @@ function Hero() {
             </span>
             .
           </h1>
-          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-primary-foreground/80 sm:text-base">
             A REDE SURURU aproxima estudantes, professores, profissionais e instituições para fortalecer as conexões
             entre educação, ciência, tecnologia, impacto e inovação em Alagoas.
           </p>
-          <p className="mt-3 max-w-xl text-sm text-muted-foreground">
+          <p className="mt-3 max-w-xl text-sm text-primary-foreground/65">
             A iniciativa começa no ecossistema alagoano, com a perspectiva de ampliar sua atuação para outros
             territórios no futuro.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild size="lg"><a href="#participar">Quero participar</a></Button>
-            <Button asChild size="lg" variant="outline"><a href="#resultados">Conheça os resultados</a></Button>
+            <Button asChild size="lg" variant="highlight"><a href="#participar">Quero participar</a></Button>
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+              <a href="#resultados">Conheça os resultados</a>
+            </Button>
           </div>
         </div>
-        <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border shadow-lg">
+        <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-2xl">
           <img
             src={heroImage}
             alt="Rede de pontos luminosos conectados, remetendo ao ecossistema de inovação"
@@ -102,10 +105,10 @@ function Hero() {
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/80 to-transparent"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/90 to-transparent"
           />
           <figcaption className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-3">
-            <span className="rounded-full bg-surface/90 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
+            <span className="rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur">
               Educação · Ciência · Tecnologia · Impacto
             </span>
             <Logo className="hidden h-6 w-auto shrink-0 drop-shadow sm:block" />
