@@ -39,7 +39,11 @@ export const publishedMetricsQuery = {
 export const settingsQuery = {
   queryKey: ["site_settings"],
   queryFn: async (): Promise<SiteSettings | null> => {
-    const { data, error } = await supabase.from("site_settings").select("*").eq("id", 1).maybeSingle();
+    const { data, error } = await supabase
+      .from("site_settings")
+      .select("student_form_url, teacher_form_url, institution_form_url, general_form_url, whatsapp_url, contact_email, updated_at")
+      .eq("id", 1)
+      .maybeSingle();
     if (error) throw error;
     return data as SiteSettings | null;
   },
