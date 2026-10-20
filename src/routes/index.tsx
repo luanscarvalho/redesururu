@@ -60,28 +60,27 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
 
 function Hero() {
   return (
-    <section className="sururu-hero border-b bg-primary text-primary-foreground">
+    <section className="sururu-hero border-b">
       <div className="container-site hero-composition">
-          <h1 className="hero-title font-bold">
-            Conectando a comunidade acadêmica às oportunidades de{" "}
-            <span className="text-highlight whitespace-nowrap">
-              inovação
-            </span>
-            .
-          </h1>
+        <h1 className="hero-title font-bold">
+          <span className="hero-line">Conectando a</span>{" "}
+          <span className="hero-line">comunidade acadêmica</span>{" "}
+          <span className="hero-line">às oportunidades</span>{" "}
+          <span className="hero-line">de inovação.</span>
+        </h1>
         <HeroTerritory />
         <div className="hero-support">
-          <p className="text-[15px] leading-relaxed text-primary-foreground/90 sm:text-base">
+          <p className="hero-main-copy">
             A REDE SURURU aproxima estudantes, professores, profissionais e instituições para fortalecer as conexões
             entre educação, ciência, tecnologia, impacto e inovação em Alagoas.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-primary-foreground/65">
+          <p className="hero-secondary-copy">
             A iniciativa começa no ecossistema alagoano, com a perspectiva de ampliar sua atuação para outros
             territórios no futuro.
           </p>
-          <div className="hero-actions mt-6 flex flex-wrap gap-3">
-            <Button asChild size="lg" variant="highlight"><a href="#participar">Quero participar</a></Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+          <div className="hero-actions">
+            <Button asChild size="lg"><a href="#participar">Quero participar</a></Button>
+            <Button asChild size="lg" variant="outline" className="hero-results">
               <a href="#resultados">Conheça os resultados</a>
             </Button>
           </div>
