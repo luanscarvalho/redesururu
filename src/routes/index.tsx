@@ -58,7 +58,7 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
   );
 }
 
-function Hero({ formUrl }: { formUrl?: string | null }) {
+function Hero({ formUrl }: { formUrl?: string | null | undefined }) {
   return (
     <section className="sururu-hero bg-primary text-primary-foreground" aria-labelledby="hero-title">
       <div className="container-site hero-editorial">
