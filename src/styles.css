@@ -115,3 +115,12 @@
     repeating-linear-gradient(45deg, color-mix(in oklab, var(--accent) 9%, transparent) 0 1px, transparent 1px 22px),
     repeating-linear-gradient(-45deg, color-mix(in oklab, var(--accent) 9%, transparent) 0 1px, transparent 1px 22px);
 }
+
+/* Hero futurista: brilhos radiais nas cores da rede sobre o azul-marinho */
+@utility hero-glow {
+  background-image:
+    radial-gradient(42rem 24rem at 78% 18%, color-mix(in oklab, var(--accent) 26%, transparent), transparent 65%),
+    radial-gradient(34rem 20rem at 12% 85%, color-mix(in oklab, var(--highlight) 14%, transparent), transparent 60%),
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--primary-foreground) 4%, transparent) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--primary-foreground) 4%, transparent) 0 1px, transparent 1px 26px);
+}
