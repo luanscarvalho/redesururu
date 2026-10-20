@@ -1,6 +1,7 @@
 # Current task
 - [x] Build a side-by-side gallery of the hero versions already made, so the user can pick one.
-- [ ] Apply the chosen hero as the only opening of the home page and remove the gallery.
+- [x] Replace the rejected openings with a new connected landscape based on the supplied reference, without a planet or map.
+- [x] Retire the comparison page and verify the opening and participation/results links on desktop and mobile.
 
 # Done
 - [x] Replace the rejected rough-looking combined image with original coastal photography and precise geographic artwork.
