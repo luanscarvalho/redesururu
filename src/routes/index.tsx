@@ -4,9 +4,10 @@ import { GraduationCap, BookOpen, Building2, type LucideIcon } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { Logo } from "@/components/site/Logo";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
+import heroImage from "@/assets/hero-ecosystem.jpg";
+import { Logo } from "@/components/site/Logo";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -63,7 +64,14 @@ function Hero() {
     <section className="file-pattern border-b">
       <div className="container-site grid items-center gap-8 py-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:py-20">
         <div>
-          <h1 className="text-[1.75rem] font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
+          <p className="inline-flex items-center gap-2 rounded-full border bg-surface px-3 py-1.5 text-xs font-semibold text-accent">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-highlight opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-highlight" />
+            </span>
+            Ecossistema de inovação · Alagoas
+          </p>
+          <h1 className="mt-4 text-[1.75rem] font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
             Conectando a comunidade acadêmica às oportunidades de{" "}
             <span className="relative whitespace-nowrap">
               inovação
@@ -84,9 +92,25 @@ function Hero() {
             <Button asChild size="lg" variant="outline"><a href="#resultados">Conheça os resultados</a></Button>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-md rounded-2xl border bg-surface p-6 sm:p-8">
-          <Logo className="h-auto w-full" />
-        </div>
+        <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border shadow-lg">
+          <img
+            src={heroImage}
+            alt="Rede de pontos luminosos conectados, remetendo ao ecossistema de inovação"
+            width={1024}
+            height={768}
+            className="h-auto w-full"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/80 to-transparent"
+          />
+          <figcaption className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-3">
+            <span className="rounded-full bg-surface/90 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
+              Educação · Ciência · Tecnologia · Impacto
+            </span>
+            <Logo className="hidden h-6 w-auto shrink-0 drop-shadow sm:block" />
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
