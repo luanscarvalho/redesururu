@@ -7,6 +7,7 @@ import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
 import heroImage from "@/assets/hero-ecosystem.jpg";
+import { Logo } from "@/components/site/Logo";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
