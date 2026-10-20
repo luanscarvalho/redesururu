@@ -116,71 +116,83 @@
     repeating-linear-gradient(-45deg, color-mix(in oklab, var(--accent) 9%, transparent) 0 1px, transparent 1px 22px);
 }
 
-/* The opening is a single editorial field, not a framed image/text split. */
+/* A typographic poster: stepped reading rhythm above the native territory form. */
 .sururu-hero {
-  --hero-map-fill: color-mix(in oklab, var(--accent) 14%, var(--primary));
-  --hero-map-stroke: color-mix(in oklab, var(--primary-foreground) 23%, var(--primary));
   position: relative;
   overflow: hidden;
+  background: var(--highlight);
+  color: var(--primary);
 }
 .hero-composition {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  padding-block: 32px;
+  padding-block: 30px 32px;
 }
 .hero-title {
   position: relative;
   z-index: 1;
-  max-width: 850px;
-  font-size: 30px;
-  line-height: 1.13;
+  font-size: 29px;
+  line-height: 1.12;
   letter-spacing: 0;
 }
+.hero-line { display: block; }
+.hero-line:nth-child(3) { margin-left: 24px; }
+.hero-line:nth-child(4) { text-align: right; }
 .hero-territory {
-  width: 150px;
-  height: 153px;
+  width: 82%;
+  height: auto;
+  aspect-ratio: 38 / 21.2;
+  margin-block: 6px 18px;
+  fill: var(--accent);
+}
+.hero-support {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
   justify-self: end;
-  margin-block: 12px 16px;
-  overflow: visible;
 }
-.hero-map-states {
-  fill: var(--hero-map-fill);
-  stroke: var(--hero-map-stroke);
-  stroke-width: 0.8;
-  stroke-linejoin: round;
-}
-.hero-map-alagoas { fill: var(--highlight); stroke: var(--highlight); stroke-width: 0.8; }
-.hero-map-connection { fill: none; stroke: var(--accent); stroke-width: 1.5; }
-.hero-map-marker { fill: none; stroke: var(--highlight); stroke-width: 1.5; }
-.hero-support { position: relative; z-index: 1; max-width: 540px; }
-.hero-actions { gap: 8px; }
-.hero-actions a { min-height: 44px; }
+.hero-main-copy { font-size: 15px; line-height: 1.5; }
+.hero-secondary-copy { margin-top: 12px; font-size: 14px; line-height: 1.5; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.hero-actions a { min-height: 44px; border-radius: 4px; }
+.hero-results { background: transparent; border-color: var(--primary); }
+.hero-results:hover { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
 @media (max-width: 359px) {
   .hero-composition { padding-block: 24px; }
   .hero-title { font-size: 26px; }
-  .hero-territory { width: 125px; height: 128px; margin-block: 8px 12px; }
-  .hero-support > p { font-size: 14px; }
+  .hero-actions { gap: 8px; }
+  .hero-actions a { padding-inline: 12px; font-size: 14px; }
 }
 @media (min-width: 640px) {
-  .hero-composition { padding-block: 48px; }
-  .hero-title { font-size: 42px; }
-  .hero-territory { width: 250px; height: 255px; }
+  .hero-composition { padding-block: 36px; }
+  .hero-title { font-size: 44px; }
+  .hero-line:nth-child(2) { margin-left: 36px; }
+  .hero-line:nth-child(3) { margin-left: 90px; }
+  .hero-territory { width: 52%; margin-block: 0; }
+  .hero-support { margin-top: -75px; max-width: 350px; }
 }
 @media (min-width: 900px) {
-  .hero-composition { min-height: 520px; padding-block: 48px 40px; }
-  .hero-title { font-size: 50px; max-width: 840px; }
-  .hero-support { margin-top: 30px; max-width: 530px; }
+  .hero-composition { min-height: 540px; padding-block: 34px 32px; }
+  .hero-title { font-size: 54px; line-height: 1.04; }
+  .hero-line:nth-child(2) { margin-left: 70px; }
+  .hero-line:nth-child(3) { margin-left: 250px; }
+  .hero-line:nth-child(4) { text-align: left; margin-left: 510px; }
+  .hero-support { width: 43%; max-width: 480px; margin-top: 36px; }
   .hero-territory {
     position: absolute;
-    width: 345px;
-    height: 352px;
-    right: 35px;
-    top: 150px;
+    width: 49%;
+    left: 18px;
+    top: 225px;
     margin: 0;
   }
 }
 @media (min-width: 1200px) {
-  .hero-title { font-size: 54px; max-width: 890px; }
-  .hero-territory { width: 360px; height: 368px; right: 28px; top: 140px; }
+  .hero-composition { min-height: 500px; padding-block: 28px 24px; }
+  .hero-title { font-size: 58px; }
+  .hero-line:nth-child(2) { margin-left: 100px; }
+  .hero-line:nth-child(3) { margin-left: 300px; }
+  .hero-line:nth-child(4) { margin-left: 590px; }
+  .hero-territory { left: 28px; top: 216px; width: 46%; }
+  .hero-support { margin-top: 20px; }
 }
