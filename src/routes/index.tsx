@@ -6,7 +6,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
-import heroScene from "@/assets/hero-connected-landscape.jpg";
+import heroScene from "@/assets/hero-student.jpg";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -59,20 +59,23 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
 }
 
 function Hero() {
+  const chips = [
+    { t: "Educação", c: "chip-a" },
+    { t: "Ciência", c: "chip-b" },
+    { t: "Tecnologia", c: "chip-c" },
+    { t: "Inovação", c: "chip-d" },
+  ];
   return (
-    <section className="sururu-hero border-b">
-      <img className="hero-scene" src={heroScene} width={1536} height={1024} alt="Paisagem ilustrativa de conexões entre educação, pesquisa e colaboração, em azul-marinho, verde-petróleo e amarelo" fetchPriority="high" />
-      <div className="hero-scene-shade" aria-hidden="true" />
+    <section className="sururu-hero">
+      <div className="hero-bands" aria-hidden="true">
+        <span className="band band-1" /><span className="band band-2" /><span className="band band-3" />
+        <span className="band band-4" /><span className="band band-5" />
+      </div>
       <div className="container-site hero-composition">
-        <div className="hero-stage">
+        <div className="hero-text">
           <h1 className="hero-title font-bold">
-            <span className="hero-line">Conectando a</span>{" "}
-            <span className="hero-line">comunidade acadêmica</span>{" "}
-            <span className="hero-line">às oportunidades</span>{" "}
-            <span className="hero-line hero-line-finale">de inovação.</span>
+            Conectando a comunidade acadêmica às oportunidades <span className="hero-line-finale">de inovação.</span>
           </h1>
-        </div>
-        <div className="hero-support">
           <p className="hero-main-copy">
             A REDE SURURU aproxima estudantes, professores, profissionais e instituições para fortalecer as conexões
             entre educação, ciência, tecnologia, impacto e inovação em Alagoas.
@@ -82,11 +85,13 @@ function Hero() {
             territórios no futuro.
           </p>
           <div className="hero-actions">
-            <Button asChild size="lg" variant="highlight"><a href="#participar">Quero participar</a></Button>
-            <Button asChild size="lg" variant="outline" className="hero-results">
-              <a href="#resultados">Conheça os resultados</a>
-            </Button>
+            <Button asChild size="lg"><a href="#participar">Quero participar</a></Button>
+            <Button asChild size="lg" variant="outline"><a href="#resultados">Conheça os resultados</a></Button>
           </div>
+        </div>
+        <div className="hero-card">
+          <img src={heroScene} width={1024} height={1024} alt="Estudante universitária sorrindo em um espaço de convivência da universidade" fetchPriority="high" />
+          {chips.map((c) => <span key={c.t} className={`hero-chip ${c.c}`} aria-hidden="true">+ {c.t}</span>)}
         </div>
       </div>
     </section>
