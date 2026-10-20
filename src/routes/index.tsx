@@ -108,7 +108,7 @@ function Hero() {
             <span className="rounded-full bg-surface/90 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
               Educação · Ciência · Tecnologia · Impacto
             </span>
-            <Logo className="h-6 w-auto shrink-0 drop-shadow" />
+            <Logo className="hidden h-6 w-auto shrink-0 drop-shadow sm:block" />
           </figcaption>
         </figure>
       </div>
