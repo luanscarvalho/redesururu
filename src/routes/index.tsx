@@ -9,7 +9,7 @@ import { ExternalCta } from "@/components/site/ExternalCta";
 import photoStudent from "@/assets/sinpete-estudante.jpg.asset.json";
 import photoTelescope from "@/assets/sinpete-telescopio.jpg.asset.json";
 import photoModel from "@/assets/sinpete-maquete.jpg.asset.json";
-import photoStand from "@/assets/sinpete-estande.jpg.asset.json";
+import photoTech from "@/assets/sinpete-tecnologia.jpg.asset.json";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -97,7 +97,7 @@ function Hero() {
             <img className="mosaic-a" src={photoStudent.url} width={1920} height={1280} alt="Estudante sorrindo em estande de projeto de extensão universitária" fetchPriority="high" />
             <img className="mosaic-b" src={photoTelescope.url} width={1920} height={1280} alt="Estudante observando por um telescópio em estande de astronomia" loading="lazy" />
             <img className="mosaic-c" src={photoModel.url} width={1920} height={1280} alt="Maquete didática sobre o ciclo do carbono" loading="lazy" />
-            <img className="mosaic-d" src={photoStand.url} width={1920} height={1280} alt="Visitantes conversando em estande sobre tartarugas marinhas da costa" loading="lazy" />
+            <img className="mosaic-d" src={photoTech.url} width={1280} height={1920} alt="Participante digitando em um notebook durante competição de programação" loading="lazy" />
           </div>
           {chips.map((c) => <span key={c.t} className={`hero-chip ${c.c}`} aria-hidden="true">+ {c.t}</span>)}
         </div>
