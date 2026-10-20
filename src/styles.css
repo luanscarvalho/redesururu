@@ -120,11 +120,11 @@
 .sururu-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--background); }
 .hero-bands { position: absolute; z-index: -1; inset: 0; pointer-events: none; }
 .band { position: absolute; left: 50%; width: 260%; aspect-ratio: 1; border-radius: 50%; transform: translateX(-50%); }
-.band-1 { top: 210px; background: var(--highlight); }
-.band-2 { top: 245px; background: var(--accent); }
-.band-3 { top: 285px; background: var(--primary); }
-.band-4 { top: 330px; background: var(--surface); }
-.band-5 { top: 350px; background: var(--background); }
+.band-1 { top: 400px; background: var(--highlight); }
+.band-2 { top: 435px; background: var(--accent); }
+.band-3 { top: 475px; background: var(--primary); }
+.band-4 { top: 520px; background: var(--surface); }
+.band-5 { top: 540px; background: var(--background); }
 .hero-composition { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-block: 48px 110px; }
 .hero-text { position: relative; }
 .hero-title { font-size: 42px; line-height: 1.12; letter-spacing: -0.01em; color: var(--primary); }
