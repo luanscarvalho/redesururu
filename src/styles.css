@@ -125,11 +125,21 @@
 }
 .hero-composition {
   position: relative;
+  z-index: 2;
   padding-block: 28px 30px;
+}
+.sururu-hero::after {
+  content: "";
+  position: absolute;
+  inset: 248px -45% -220px -60%;
+  border-radius: 50% 50% 0 0;
+  background: var(--highlight);
+  transform: rotate(-9deg);
 }
 .sururu-hero::before {
   content: "";
   position: absolute;
+  z-index: 1;
   inset: 260px -45% -220px -60%;
   border-radius: 50% 50% 0 0;
   background: var(--primary);
@@ -158,7 +168,7 @@
   height: auto;
   aspect-ratio: 49 / 32;
   right: -28px;
-  top: 150px;
+  top: 130px;
   transform: rotate(-8deg);
 }
 .hero-territory-depth { fill: var(--highlight); }
@@ -193,7 +203,8 @@
   .hero-line-finale { font-size: 38px; }
   .hero-stage { min-height: 305px; }
   .sururu-hero::before { top: 240px; }
-  .hero-territory { top: 145px; }
+  .sururu-hero::after { top: 228px; }
+  .hero-territory { top: 125px; }
   .hero-actions { gap: 8px; }
   .hero-actions a { padding-inline: 12px; font-size: 14px; }
 }
@@ -204,6 +215,7 @@
   .hero-line-finale { font-size: 62px; margin-top: 16px; }
   .hero-territory { width: 65%; top: 115px; right: -45px; }
   .sururu-hero::before { inset: 290px -25% -350px -25%; transform: rotate(-8deg); }
+  .sururu-hero::after { inset: 278px -25% -350px -25%; transform: rotate(-8deg); }
   .hero-support { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 0 36px; padding-top: 20px; }
   .hero-secondary-copy { grid-column: 1; }
   .hero-actions { grid-column: 2; grid-row: 1 / 3; flex-direction: column; justify-content: center; margin-top: 0; }
@@ -213,13 +225,15 @@
   .hero-stage { min-height: 340px; }
   .hero-title { font-size: 52px; line-height: 1.04; }
   .hero-line-finale { font-size: 76px; margin-top: 16px; }
-  .hero-territory { width: 53%; right: -35px; top: 35px; }
-  .sururu-hero::before { inset: 305px -20% -500px -25%; transform: rotate(-9deg); }
+  .hero-territory { width: 50%; right: -35px; top: 5px; }
+  .sururu-hero::before { inset: 305px -20% -500px -25%; transform: rotate(0deg); }
+  .sururu-hero::after { inset: 292px -20% -500px -25%; transform: rotate(0deg); }
+  .hero-support::before { display: none; }
   .hero-support { grid-template-columns: minmax(0, 620px) 230px; justify-content: space-between; padding-top: 24px; gap: 0 60px; }
 }
 @media (min-width: 1200px) {
   .hero-title { font-size: 58px; }
   .hero-line-finale { font-size: 84px; }
-  .hero-territory { width: 52%; right: -35px; top: 35px; }
+  .hero-territory { width: 50%; right: -35px; top: 5px; }
   .hero-stage { min-height: 355px; }
 }
