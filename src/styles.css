@@ -173,7 +173,7 @@
   .hero-composition { padding-block: 36px 44px; min-height: 580px; }
   .hero-stage { min-height: 0; }
   .hero-title { max-width: 460px; font-size: 38px; }
-  .hero-scene { inset: 0; width: 100%; height: 100%; object-position: 65% 38%; }
+  .hero-scene { inset: 0; width: 100%; height: 100%; object-position: 65% 8%; }
   .hero-scene-shade { background: linear-gradient(90deg, var(--hero-shade) 0%, var(--hero-shade) 25%, var(--hero-edge) 49%, transparent 72%); }
   .hero-support { margin-top: 24px; max-width: 410px; }
 }
@@ -181,7 +181,7 @@
   .hero-composition { padding-block: 44px 58px; min-height: 570px; }
   .hero-title { max-width: 570px; font-size: 43px; line-height: 1.08; }
   .hero-support { max-width: 465px; margin-top: 24px; }
-  .hero-scene { object-position: 50% 38%; }
+  .hero-scene { object-position: 50% 8%; }
   .hero-scene-shade { background: linear-gradient(90deg, var(--hero-shade) 0%, var(--hero-shade) 21%, var(--hero-edge) 43%, transparent 60%); }
 }
 @media (min-width: 1200px) {
@@ -189,5 +189,5 @@
   .hero-support { max-width: 475px; }
 }
 @media (min-width: 1600px) {
-  .hero-scene { object-position: 50% 40%; }
+  .hero-scene { object-position: 50% 8%; }
 }
