@@ -62,13 +62,15 @@ function Hero() {
   return (
     <section className="sururu-hero border-b">
       <div className="container-site hero-composition">
-        <h1 className="hero-title font-bold">
-          <span className="hero-line">Conectando a</span>{" "}
-          <span className="hero-line">comunidade acadêmica</span>{" "}
-          <span className="hero-line">às oportunidades</span>{" "}
-          <span className="hero-line">de inovação.</span>
-        </h1>
-        <HeroTerritory />
+        <div className="hero-stage">
+          <HeroTerritory />
+          <h1 className="hero-title font-bold">
+            <span className="hero-line">Conectando a</span>{" "}
+            <span className="hero-line">comunidade acadêmica</span>{" "}
+            <span className="hero-line">às oportunidades</span>{" "}
+            <span className="hero-line hero-line-finale">de inovação.</span>
+          </h1>
+        </div>
         <div className="hero-support">
           <p className="hero-main-copy">
             A REDE SURURU aproxima estudantes, professores, profissionais e instituições para fortalecer as conexões
@@ -79,7 +81,7 @@ function Hero() {
             territórios no futuro.
           </p>
           <div className="hero-actions">
-            <Button asChild size="lg"><a href="#participar">Quero participar</a></Button>
+            <Button asChild size="lg" variant="highlight"><a href="#participar">Quero participar</a></Button>
             <Button asChild size="lg" variant="outline" className="hero-results">
               <a href="#resultados">Conheça os resultados</a>
             </Button>
