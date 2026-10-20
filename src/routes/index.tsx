@@ -6,7 +6,10 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
-import heroScene from "@/assets/hero-student.jpg";
+import photoStudent from "@/assets/sinpete-estudante.jpg.asset.json";
+import photoTelescope from "@/assets/sinpete-telescopio.jpg.asset.json";
+import photoModel from "@/assets/sinpete-maquete.jpg.asset.json";
+import photoStand from "@/assets/sinpete-estande.jpg.asset.json";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -90,7 +93,12 @@ function Hero() {
           </div>
         </div>
         <div className="hero-card">
-          <img src={heroScene} width={1024} height={1024} alt="Estudante universitária sorrindo em um espaço de convivência da universidade" fetchPriority="high" />
+          <div className="hero-mosaic">
+            <img className="mosaic-a" src={photoStudent.url} width={1920} height={1280} alt="Estudante sorrindo em estande de projeto de extensão universitária" fetchPriority="high" />
+            <img className="mosaic-b" src={photoTelescope.url} width={1920} height={1280} alt="Estudante observando por um telescópio em estande de astronomia" loading="lazy" />
+            <img className="mosaic-c" src={photoModel.url} width={1920} height={1280} alt="Maquete didática sobre o ciclo do carbono" loading="lazy" />
+            <img className="mosaic-d" src={photoStand.url} width={1920} height={1280} alt="Visitantes conversando em estande sobre tartarugas marinhas da costa" loading="lazy" />
+          </div>
           {chips.map((c) => <span key={c.t} className={`hero-chip ${c.c}`} aria-hidden="true">+ {c.t}</span>)}
         </div>
       </div>
