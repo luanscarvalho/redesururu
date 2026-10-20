@@ -116,7 +116,7 @@
     repeating-linear-gradient(-45deg, color-mix(in oklab, var(--accent) 9%, transparent) 0 1px, transparent 1px 22px);
 }
 
-/* Full-bleed innovation scene follows the selected planet reference. */
+/* Native geographic artwork and original coastal photography share one scene. */
 .sururu-hero {
   position: relative;
   isolation: isolate;
@@ -129,9 +129,10 @@
 .hero-scene {
   position: absolute;
   z-index: -3;
-  top: 125px;
+  top: 180px;
   width: 100%;
-  height: 300px;
+  height: 245px;
+  opacity: 0.3;
   object-fit: cover;
   object-position: 76% 50%;
 }
@@ -139,8 +140,12 @@
   position: absolute;
   z-index: -2;
   inset: 0;
-  background: linear-gradient(180deg, var(--primary) 0 155px, transparent 210px 330px, var(--primary) 420px);
+  background: linear-gradient(180deg, var(--primary) 0 155px, transparent 195px 345px, var(--primary) 425px);
 }
+.hero-territory { position: absolute; z-index: -1; width: 100%; height: auto; top: 150px; right: -12px; }
+.hero-territory-depth { fill: var(--highlight); }
+.hero-territory-edge { fill: var(--surface); }
+.hero-territory-outline { fill: none; stroke: var(--surface); stroke-width: 0.12; }
 .sururu-hero::after {
   content: "";
   position: absolute;
@@ -165,7 +170,8 @@
 @media (max-width: 359px) {
   .hero-title { font-size: 26px; }
   .hero-stage { min-height: 325px; }
-  .hero-scene { top: 100px; }
+  .hero-scene { top: 140px; height: 255px; }
+  .hero-territory { top: 135px; }
   .hero-actions { gap: 8px; }
   .hero-actions a { padding-inline: 12px; font-size: 14px; }
 }
@@ -173,7 +179,8 @@
   .hero-composition { padding-block: 36px 44px; min-height: 580px; }
   .hero-stage { min-height: 0; }
   .hero-title { max-width: 460px; font-size: 38px; }
-  .hero-scene { inset: 0; width: 100%; height: 100%; object-position: 65% 38%; }
+  .hero-scene { inset: auto 0 0; width: 100%; height: 240px; object-fit: cover; object-position: 50% 70%; }
+  .hero-territory { width: 60%; top: 95px; right: -40px; }
   .hero-scene-shade { background: linear-gradient(90deg, var(--hero-shade) 0%, var(--hero-shade) 25%, var(--hero-edge) 49%, transparent 72%); }
   .hero-support { margin-top: 24px; max-width: 410px; }
 }
@@ -181,13 +188,14 @@
   .hero-composition { padding-block: 44px 58px; min-height: 570px; }
   .hero-title { max-width: 570px; font-size: 43px; line-height: 1.08; }
   .hero-support { max-width: 465px; margin-top: 24px; }
-  .hero-scene { object-position: 50% 38%; }
-  .hero-scene-shade { background: linear-gradient(90deg, var(--hero-shade) 0%, var(--hero-shade) 21%, var(--hero-edge) 43%, transparent 60%); }
+  .hero-scene { object-position: right bottom; }
+  .hero-territory { width: 56%; max-width: 720px; top: 15px; right: 0; }
+  .hero-scene-shade { background: linear-gradient(180deg, var(--primary) 0%, var(--primary) 45%, transparent 90%), linear-gradient(90deg, var(--hero-shade), transparent 70%); }
 }
 @media (min-width: 1200px) {
   .hero-title { font-size: 46px; }
   .hero-support { max-width: 475px; }
 }
 @media (min-width: 1600px) {
-  .hero-scene { object-position: 50% 40%; }
+  .hero-scene { object-position: right bottom; }
 }
