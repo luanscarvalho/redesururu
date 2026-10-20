@@ -1,0 +1,381 @@
+/* Galeria temporária de aberturas: cada variante mantém o mesmo texto e botões. */
+.hg { padding-block: 24px 72px; background: var(--background); }
+.hg-item { margin-bottom: 64px; }
+.hg-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  max-width: 72rem;
+  margin: 0 auto 12px;
+  padding-inline: 1.125rem;
+}
+.hg-label b { font-size: 18px; color: var(--foreground); }
+.hg-label span { font-size: 13px; color: var(--muted-foreground); }
+
+.hv { position: relative; overflow: hidden; }
+.hv-line { display: block; }
+.hv-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.hv-actions a { min-height: 44px; border-radius: 4px; }
+.hv-title { font-weight: 700; letter-spacing: 0; }
+.hv-results { background: transparent; color: var(--primary-foreground); border-color: var(--primary-foreground); }
+.hv-results:hover { background: var(--primary-foreground); color: var(--primary); border-color: var(--primary-foreground); }
+
+/* A — rede luminosa emoldurada sobre azul-marinho */
+.hv-a { background: var(--primary); color: var(--primary-foreground); }
+.hv-a .hv-glow {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(42rem 24rem at 78% 18%, color-mix(in oklab, var(--accent) 26%, transparent), transparent 65%),
+    radial-gradient(34rem 20rem at 12% 85%, color-mix(in oklab, var(--highlight) 14%, transparent), transparent 60%),
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--primary-foreground) 4%, transparent) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--primary-foreground) 4%, transparent) 0 1px, transparent 1px 26px);
+}
+.hv-a .hv-grid { position: relative; display: grid; gap: 32px; padding-block: 48px; align-items: center; }
+.hv-a .hv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--highlight) 40%, transparent);
+  background: color-mix(in oklab, var(--primary-foreground) 5%, transparent);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--highlight);
+}
+.hv-a .hv-ping { position: relative; display: inline-flex; height: 8px; width: 8px; }
+.hv-a .hv-ping::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--highlight);
+  opacity: 0.75;
+  animation: hv-ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.hv-a .hv-ping::after {
+  content: "";
+  position: relative;
+  display: inline-flex;
+  height: 8px;
+  width: 8px;
+  border-radius: 999px;
+  background: var(--highlight);
+}
+@keyframes hv-ping { 75%, 100% { transform: scale(2.2); opacity: 0; } }
+.hv-a .hv-title { margin-top: 16px; font-size: 28px; line-height: 1.15; }
+.hv-a .hv-mark { position: relative; white-space: nowrap; }
+.hv-a .hv-mark::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -4px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--highlight);
+}
+.hv-a .hv-copy { margin-top: 20px; max-width: 576px; font-size: 15px; line-height: 1.6; color: color-mix(in oklab, var(--primary-foreground) 80%, transparent); }
+.hv-a .hv-copy2 { margin-top: 12px; max-width: 576px; font-size: 14px; line-height: 1.6; color: color-mix(in oklab, var(--primary-foreground) 65%, transparent); }
+.hv-a .hv-actions { margin-top: 28px; }
+.hv-a .hv-figure {
+  position: relative;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 448px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--primary-foreground) 15%, transparent);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
+}
+.hv-a .hv-figure img { display: block; width: 100%; height: auto; }
+.hv-a .hv-fade {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 96px;
+  pointer-events: none;
+  background: linear-gradient(to top, color-mix(in oklab, var(--primary) 90%, transparent), transparent);
+}
+.hv-a .hv-caption {
+  position: absolute;
+  inset-inline: 16px;
+  bottom: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-foreground);
+}
+.hv-a .hv-caption span {
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--primary-foreground) 10%, transparent);
+  padding: 4px 12px;
+}
+@media (min-width: 640px) { .hv-a .hv-title { font-size: 36px; } }
+@media (min-width: 768px) { .hv-a .hv-grid { grid-template-columns: 1.15fr 1fr; padding-block: 64px; } }
+@media (min-width: 1024px) { .hv-a .hv-title { font-size: 44px; } }
+
+/* B — mapa do Brasil com Alagoas em amarelo */
+.hv-b { background: var(--primary); color: var(--primary-foreground); }
+.hv-b .hv-composition { position: relative; display: grid; padding-block: 32px; }
+.hv-b .hv-title { position: relative; z-index: 1; max-width: 850px; font-size: 30px; line-height: 1.13; }
+.hv-b .hv-title em { font-style: normal; color: var(--highlight); white-space: nowrap; }
+.hv-b .hv-territory { width: 150px; height: 153px; justify-self: end; margin-block: 12px 16px; overflow: visible; }
+.hv-b .hv-states {
+  fill: color-mix(in oklab, var(--accent) 14%, var(--primary));
+  stroke: color-mix(in oklab, var(--primary-foreground) 23%, var(--primary));
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+}
+.hv-b .hv-alagoas { fill: var(--highlight); stroke: var(--highlight); stroke-width: 0.8; }
+.hv-b .hv-connection { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.hv-b .hv-marker { fill: none; stroke: var(--highlight); stroke-width: 1.5; }
+.hv-b .hv-support { position: relative; z-index: 1; max-width: 540px; }
+.hv-b .hv-copy { font-size: 15px; line-height: 1.6; color: color-mix(in oklab, var(--primary-foreground) 90%, transparent); }
+.hv-b .hv-copy2 { margin-top: 12px; font-size: 14px; line-height: 1.6; color: color-mix(in oklab, var(--primary-foreground) 65%, transparent); }
+@media (max-width: 359px) {
+  .hv-b .hv-composition { padding-block: 24px; }
+  .hv-b .hv-title { font-size: 26px; }
+  .hv-b .hv-territory { width: 125px; height: 128px; margin-block: 8px 12px; }
+}
+@media (min-width: 768px) {
+  .hv-b .hv-composition { padding-block: 48px; }
+  .hv-b .hv-title { font-size: 42px; }
+  .hv-b .hv-territory { width: 250px; height: 255px; }
+}
+@media (min-width: 1024px) {
+  .hv-b .hv-composition { min-height: 520px; padding-block: 48px 40px; }
+  .hv-b .hv-title { font-size: 50px; max-width: 840px; }
+  .hv-b .hv-support { margin-top: 30px; max-width: 530px; }
+  .hv-b .hv-territory { width: 320px; height: 327px; }
+}
+
+/* C — cartaz amarelo com tipografia escalonada */
+.hv-c { background: var(--highlight); color: var(--primary); }
+.hv-c .hv-composition { position: relative; display: grid; padding-block: 30px 32px; }
+.hv-c .hv-title { position: relative; z-index: 1; font-size: 29px; line-height: 1.12; }
+.hv-c .hv-line:nth-child(3) { margin-left: 24px; }
+.hv-c .hv-line:nth-child(4) { text-align: right; }
+.hv-c .hv-territory { width: 82%; height: auto; aspect-ratio: 38 / 21.2; margin-block: 6px 18px; fill: var(--accent); }
+.hv-c .hv-support { position: relative; z-index: 1; max-width: 480px; justify-self: end; }
+.hv-c .hv-copy { font-size: 15px; line-height: 1.5; }
+.hv-c .hv-copy2 { margin-top: 12px; font-size: 14px; line-height: 1.5; opacity: 0.85; }
+.hv-c .hv-results { border-color: color-mix(in oklab, var(--primary) 45%, transparent); color: var(--primary); }
+.hv-c .hv-results:hover { background: var(--primary); color: var(--highlight); }
+@media (max-width: 359px) { .hv-c .hv-title { font-size: 26px; } }
+@media (min-width: 640px) {
+  .hv-c .hv-composition { padding-block: 36px; }
+  .hv-c .hv-title { font-size: 44px; }
+  .hv-c .hv-line:nth-child(2) { margin-left: 36px; }
+  .hv-c .hv-line:nth-child(3) { margin-left: 90px; }
+  .hv-c .hv-territory { width: 52%; margin-block: 0; }
+  .hv-c .hv-support { margin-top: -75px; max-width: 350px; }
+}
+@media (min-width: 900px) {
+  .hv-c .hv-composition { min-height: 540px; padding-block: 34px 32px; }
+  .hv-c .hv-title { font-size: 54px; line-height: 1.04; }
+  .hv-c .hv-line:nth-child(2) { margin-left: 70px; }
+  .hv-c .hv-line:nth-child(3) { margin-left: 250px; }
+  .hv-c .hv-line:nth-child(4) { text-align: left; margin-left: 510px; }
+  .hv-c .hv-support { width: 43%; max-width: 480px; margin-top: 36px; }
+}
+@media (min-width: 1200px) {
+  .hv-c .hv-composition { min-height: 500px; padding-block: 28px 24px; }
+  .hv-c .hv-title { font-size: 58px; }
+  .hv-c .hv-line:nth-child(2) { margin-left: 100px; }
+  .hv-c .hv-line:nth-child(3) { margin-left: 300px; }
+  .hv-c .hv-line:nth-child(4) { margin-left: 590px; }
+}
+
+/* D — curvas em camadas sobre creme */
+.hv-d { background: var(--surface); color: var(--primary); }
+.hv-d .hv-composition { position: relative; z-index: 2; padding-block: 28px 30px; }
+.hv-d::after {
+  content: "";
+  position: absolute;
+  inset: 248px -45% -220px -60%;
+  border-radius: 50% 50% 0 0;
+  background: var(--highlight);
+  transform: rotate(-9deg);
+}
+.hv-d::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 260px -45% -220px -60%;
+  border-radius: 50% 50% 0 0;
+  background: var(--primary);
+  transform: rotate(-9deg);
+}
+.hv-d .hv-stage { position: relative; min-height: 332px; }
+.hv-d .hv-title { position: relative; z-index: 2; font-size: 29px; line-height: 1.08; }
+.hv-d .hv-line-finale { margin-top: 12px; font-size: 42px; }
+.hv-d .hv-territory {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 49 / 32;
+  right: -28px;
+  top: 130px;
+  transform: rotate(-8deg);
+}
+.hv-d .hv-depth { fill: var(--highlight); }
+.hv-d .hv-edge { fill: var(--surface); }
+.hv-d .hv-face { fill: var(--accent); }
+.hv-d .hv-support { position: relative; z-index: 3; color: var(--primary-foreground); padding-top: 24px; }
+.hv-d .hv-support::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: -40px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--primary);
+}
+.hv-d .hv-copy { font-size: 15px; line-height: 1.5; }
+.hv-d .hv-copy2 { margin-top: 12px; font-size: 14px; line-height: 1.5; opacity: 0.8; }
+@media (max-width: 359px) {
+  .hv-d .hv-title { font-size: 26px; }
+  .hv-d .hv-line-finale { font-size: 38px; }
+  .hv-d .hv-stage { min-height: 305px; }
+  .hv-d::before { top: 240px; }
+  .hv-d .hv-territory { top: 145px; }
+}
+@media (min-width: 640px) {
+  .hv-d .hv-stage { min-height: 360px; }
+  .hv-d .hv-title { font-size: 42px; }
+  .hv-d .hv-line-finale { font-size: 62px; margin-top: 16px; }
+  .hv-d .hv-territory { width: 65%; top: 115px; right: -45px; }
+  .hv-d::before { inset: 290px -25% -350px -25%; transform: rotate(-8deg); }
+  .hv-d::after { inset: 278px -25% -350px -25%; transform: rotate(-8deg); }
+  .hv-d .hv-support { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 0 36px; padding-top: 20px; }
+  .hv-d .hv-copy2 { grid-column: 1; }
+  .hv-d .hv-actions { grid-column: 2; grid-row: 1 / 3; flex-direction: column; justify-content: center; margin-top: 0; }
+}
+@media (min-width: 900px) {
+  .hv-d .hv-stage { min-height: 340px; }
+  .hv-d .hv-title { font-size: 52px; line-height: 1.04; }
+  .hv-d .hv-line-finale { font-size: 76px; margin-top: 16px; }
+  .hv-d .hv-territory { width: 53%; right: -35px; top: 35px; }
+  .hv-d::before { inset: 305px -20% -500px -25%; transform: rotate(-9deg); }
+  .hv-d::after { inset: 292px -20% -500px -25%; transform: rotate(-9deg); }
+  .hv-d .hv-support { grid-template-columns: minmax(0, 620px) 230px; justify-content: space-between; padding-top: 24px; gap: 0 60px; }
+}
+@media (min-width: 1200px) {
+  .hv-d .hv-title { font-size: 58px; }
+  .hv-d .hv-line-finale { font-size: 84px; }
+  .hv-d .hv-territory { width: 52%; right: -35px; top: 35px; }
+  .hv-d .hv-stage { min-height: 355px; }
+}
+
+/* E — cena da inovação em foto de fundo */
+.hv-e {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  isolation: isolate;
+  --hv-shade: color-mix(in oklab, var(--primary) 95%, transparent);
+  --hv-edge: color-mix(in oklab, var(--primary) 48%, transparent);
+}
+.hv-e .hv-scene { position: absolute; z-index: -3; top: 125px; width: 100%; height: 300px; object-fit: cover; object-position: 76% 50%; }
+.hv-e .hv-shade {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(180deg, var(--primary) 0 155px, transparent 210px 330px, var(--primary) 420px);
+}
+.hv-e .hv-composition { position: relative; padding-block: 26px 30px; }
+.hv-e .hv-stage { min-height: 355px; }
+.hv-e .hv-title { position: relative; z-index: 1; max-width: 560px; font-size: 30px; line-height: 1.08; }
+.hv-e .hv-line-finale { color: var(--highlight); }
+.hv-e .hv-support { position: relative; z-index: 1; max-width: 490px; }
+.hv-e .hv-copy { font-size: 15px; line-height: 1.5; }
+.hv-e .hv-copy2 { margin-top: 12px; font-size: 14px; line-height: 1.5; opacity: 0.85; }
+.hv-e .hv-bar {
+  position: absolute;
+  z-index: 3;
+  inset: auto 0 0;
+  height: 7px;
+  background: var(--highlight);
+  clip-path: polygon(0 70%, 35% 70%, 36% 0, 75% 0, 76% 70%, 100% 70%, 100% 100%, 0 100%);
+}
+@media (max-width: 359px) {
+  .hv-e .hv-title { font-size: 26px; }
+  .hv-e .hv-stage { min-height: 325px; }
+  .hv-e .hv-scene { top: 100px; }
+}
+@media (min-width: 640px) {
+  .hv-e .hv-composition { padding-block: 36px 44px; min-height: 580px; }
+  .hv-e .hv-stage { min-height: 0; }
+  .hv-e .hv-title { max-width: 460px; font-size: 38px; }
+  .hv-e .hv-scene { inset: 0; width: 100%; height: 100%; object-position: 65% 38%; }
+  .hv-e .hv-shade { background: linear-gradient(90deg, var(--hv-shade) 0%, var(--hv-shade) 25%, var(--hv-edge) 49%, transparent 72%); }
+  .hv-e .hv-support { margin-top: 24px; max-width: 410px; }
+}
+@media (min-width: 900px) {
+  .hv-e .hv-composition { padding-block: 44px 58px; min-height: 570px; }
+  .hv-e .hv-title { max-width: 570px; font-size: 43px; }
+  .hv-e .hv-support { max-width: 465px; margin-top: 24px; }
+  .hv-e .hv-scene { object-position: 50% 38%; }
+  .hv-e .hv-shade { background: linear-gradient(90deg, var(--hv-shade) 0%, var(--hv-shade) 21%, var(--hv-edge) 43%, transparent 60%); }
+}
+@media (min-width: 1200px) {
+  .hv-e .hv-title { font-size: 46px; }
+  .hv-e .hv-support { max-width: 475px; }
+  .hv-e .hv-scene { object-position: 50% 40%; }
+}
+
+/* F — litoral de Maceió recortado no contorno de Alagoas */
+.hv-f {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  isolation: isolate;
+  --hv-shade: color-mix(in oklab, var(--primary) 95%, transparent);
+  --hv-edge: color-mix(in oklab, var(--primary) 48%, transparent);
+}
+.hv-f .hv-scene { position: absolute; z-index: -3; top: 180px; width: 100%; height: 245px; opacity: 0.3; object-fit: cover; object-position: 76% 50%; }
+.hv-f .hv-shade {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background: linear-gradient(180deg, var(--primary) 0 155px, transparent 195px 345px, var(--primary) 425px);
+}
+.hv-f .hv-territory { position: absolute; z-index: -1; width: 100%; height: auto; top: 150px; right: -12px; }
+.hv-f .hv-depth { fill: var(--highlight); }
+.hv-f .hv-edge { fill: var(--surface); }
+.hv-f .hv-outline { fill: none; stroke: var(--surface); stroke-width: 0.12; }
+.hv-f .hv-composition { position: relative; padding-block: 26px 30px; }
+.hv-f .hv-stage { min-height: 355px; }
+.hv-f .hv-title { max-width: 560px; font-size: 30px; line-height: 1.08; }
+.hv-f .hv-line-finale { color: var(--highlight); }
+.hv-f .hv-support { position: relative; max-width: 490px; }
+.hv-f .hv-copy { font-size: 15px; line-height: 1.5; }
+.hv-f .hv-copy2 { margin-top: 12px; font-size: 14px; line-height: 1.5; opacity: 0.85; }
+@media (max-width: 359px) {
+  .hv-f .hv-title { font-size: 26px; }
+  .hv-f .hv-stage { min-height: 325px; }
+  .hv-f .hv-scene { top: 140px; height: 255px; }
+  .hv-f .hv-territory { top: 135px; }
+}
+@media (min-width: 640px) {
+  .hv-f .hv-composition { padding-block: 36px 44px; min-height: 580px; }
+  .hv-f .hv-stage { min-height: 0; }
+  .hv-f .hv-title { max-width: 460px; font-size: 38px; }
+  .hv-f .hv-scene { inset: auto 0 0; width: 100%; height: 240px; object-position: 50% 70%; }
+  .hv-f .hv-territory { width: 60%; top: 95px; right: -40px; }
+  .hv-f .hv-shade { background: linear-gradient(90deg, var(--hv-shade) 0%, var(--hv-shade) 25%, var(--hv-edge) 49%, transparent 72%); }
+  .hv-f .hv-support { margin-top: 24px; max-width: 410px; }
+}
+@media (min-width: 900px) {
+  .hv-f .hv-composition { padding-block: 44px 58px; min-height: 570px; }
+  .hv-f .hv-title { max-width: 570px; font-size: 43px; }
+  .hv-f .hv-support { max-width: 465px; margin-top: 24px; }
+  .hv-f .hv-scene { object-position: right bottom; }
+  .hv-f .hv-territory { width: 56%; max-width: 720px; top: 15px; right: 0; }
+  .hv-f .hv-shade { background: linear-gradient(180deg, var(--primary) 0%, var(--primary) 45%, transparent 90%), linear-gradient(90deg, var(--hv-shade), transparent 70%); }
+}
+@media (min-width: 1200px) {
+  .hv-f .hv-title { font-size: 46px; }
+  .hv-f .hv-support { max-width: 475px; }
+}
