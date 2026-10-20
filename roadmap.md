@@ -1,3 +1,3 @@
 # Current task
-- [x] Rebuild only the hero using the selected technological-planet reference, keeping existing copy and links.
-- [x] Compare desktop and mobile composition and verify both calls to action.
+- [ ] Replace the planet with a geographically correct sculptural Alagoas silhouette and the campus foreground with the uploaded Maceió coastline.
+- [ ] Preserve the hero copy, links and all other sections; verify desktop and mobile.
