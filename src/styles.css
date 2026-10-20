@@ -125,8 +125,8 @@
 .band-3 { top: 285px; background: var(--primary); }
 .band-4 { top: 330px; background: var(--surface); }
 .band-5 { top: 350px; background: var(--background); }
-.hero-composition { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-block: 48px 72px; }
-.hero-text { position: relative; padding: 28px; border-radius: 16px; background: color-mix(in oklab, var(--background) 92%, transparent); }
+.hero-composition { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-block: 48px 110px; }
+.hero-text { position: relative; }
 .hero-title { font-size: 42px; line-height: 1.12; letter-spacing: -0.01em; color: var(--primary); }
 .hero-line-finale { color: var(--accent); }
 .hero-main-copy { margin-top: 18px; font-size: 16px; line-height: 1.55; color: var(--muted-foreground); }
