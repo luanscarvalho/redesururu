@@ -170,6 +170,17 @@
   color: var(--primary-foreground);
   padding-top: 24px;
 }
+.hero-support::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: -40px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--primary);
+}
 .hero-main-copy { font-size: 15px; line-height: 1.5; }
 .hero-secondary-copy { margin-top: 12px; font-size: 14px; line-height: 1.5; opacity: 0.8; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
@@ -202,13 +213,13 @@
   .hero-stage { min-height: 340px; }
   .hero-title { font-size: 52px; line-height: 1.04; }
   .hero-line-finale { font-size: 76px; margin-top: 16px; }
-  .hero-territory { width: 61%; right: -75px; top: 98px; }
+  .hero-territory { width: 53%; right: -35px; top: 35px; }
   .sururu-hero::before { inset: 305px -20% -500px -25%; transform: rotate(-9deg); }
   .hero-support { grid-template-columns: minmax(0, 620px) 230px; justify-content: space-between; padding-top: 24px; gap: 0 60px; }
 }
 @media (min-width: 1200px) {
   .hero-title { font-size: 58px; }
   .hero-line-finale { font-size: 84px; }
-  .hero-territory { width: 59%; right: -35px; top: 92px; }
+  .hero-territory { width: 52%; right: -35px; top: 35px; }
   .hero-stage { min-height: 355px; }
 }
