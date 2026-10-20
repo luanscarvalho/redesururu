@@ -116,11 +116,54 @@
     repeating-linear-gradient(-45deg, color-mix(in oklab, var(--accent) 9%, transparent) 0 1px, transparent 1px 22px);
 }
 
-/* Hero futurista: brilhos radiais nas cores da rede sobre o azul-marinho */
-@utility hero-glow {
-  background-image:
-    radial-gradient(42rem 24rem at 78% 18%, color-mix(in oklab, var(--accent) 26%, transparent), transparent 65%),
-    radial-gradient(34rem 20rem at 12% 85%, color-mix(in oklab, var(--highlight) 14%, transparent), transparent 60%),
-    repeating-linear-gradient(45deg, color-mix(in oklab, var(--primary-foreground) 4%, transparent) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--primary-foreground) 4%, transparent) 0 1px, transparent 1px 26px);
+/* Exclusive to the home opening: flat ink, interlaced paths and editorial labels. */
+.sururu-hero { overflow: hidden; }
+.hero-editorial { padding-block: 28px 32px; }
+.hero-topline { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--primary-foreground); opacity: .7; }
+.hero-topline span:last-child { display: flex; gap: 12px; }
+.hero-title { position: relative; z-index: 1; margin-top: 24px; max-width: 1030px; font-size: 56px; font-weight: 600; line-height: 1.08; letter-spacing: 0; text-wrap: balance; }
+.hero-connections { position: relative; height: 196px; margin-block: 12px 20px; }
+.hero-weave { position: absolute; width: calc(100% + 64px); height: 100%; left: -32px; }
+.hero-weave-quiet { color: var(--primary-foreground); opacity: .1; }
+.hero-weave-teal { color: var(--accent); }
+.hero-weave-yellow, .hero-weave-nodes { color: var(--highlight); }
+.hero-weave-yellow { stroke-dasharray: 72 28; animation: hero-path-arrive 1.8s ease-out both; }
+.hero-connection-label { position: absolute; display: flex; align-items: center; gap: 22px; padding: 8px 12px; background: var(--primary-foreground); color: var(--primary); font-size: 11px; font-weight: 700; line-height: 1; white-space: nowrap; }
+.hero-label-research { left: 5%; top: 12%; transform: rotate(-6deg); }
+.hero-label-grants { left: 24%; bottom: 5%; background: var(--highlight); transform: rotate(5deg); }
+.hero-label-projects { left: 46%; top: 2%; transform: rotate(-4deg); }
+.hero-label-events { left: 66%; bottom: 7%; transform: rotate(4deg); }
+.hero-label-new { right: 1%; top: 8%; background: var(--highlight); transform: rotate(-5deg); }
+.hero-bottomline { display: flex; align-items: center; justify-content: space-between; gap: 32px; border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 20%, transparent); padding-top: 22px; }
+.hero-description { max-width: 450px; font-size: 15px; line-height: 1.6; color: color-mix(in oklab, var(--primary-foreground) 85%, transparent); }
+.hero-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.hero-actions > * { border-radius: 4px; }
+.hero-results { color: var(--primary-foreground); }
+.hero-results:hover { background: color-mix(in oklab, var(--primary-foreground) 10%, transparent); color: var(--primary-foreground); }
+@keyframes hero-path-arrive { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@media (min-width: 1280px) {
+  .hero-title { font-size: 62px; }
 }
+@media (max-width: 900px) {
+  .hero-title { font-size: 46px; }
+  .hero-bottomline { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .hero-description { max-width: 580px; }
+}
+@media (max-width: 639px) {
+  .hero-editorial { padding-block: 20px 24px; }
+  .hero-title { font-size: 36px; line-height: 1.08; margin-top: 22px; text-wrap: initial; }
+  .hero-connections { height: 146px; margin-block: 16px 12px; }
+  .hero-weave { width: calc(100% + 100px); left: -50px; }
+  .hero-connection-label { font-size: 10px; padding: 7px 9px; gap: 8px; }
+  .hero-label-research { left: 0; top: 10%; }
+  .hero-label-grants { left: 12%; bottom: 4%; }
+  .hero-label-projects { left: 39%; top: 36%; }
+  .hero-label-events { left: 65%; bottom: 0; }
+  .hero-label-new { right: 0; top: 5%; }
+  .hero-bottomline { padding-top: 16px; gap: 16px; }
+  .hero-description { font-size: 14px; line-height: 1.55; }
+  .hero-actions { width: 100%; flex-wrap: wrap; gap: 4px; }
+  .hero-actions > * { padding-inline: 12px; font-size: 13px; }
+}
+@media (max-width: 359px) { .hero-title { font-size: 31px; } }
+@media (prefers-reduced-motion: reduce) { .hero-weave-yellow { animation: none; } }

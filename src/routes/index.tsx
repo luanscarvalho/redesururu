@@ -6,8 +6,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
-import heroImage from "@/assets/hero-ecosystem.jpg";
-import { Logo } from "@/components/site/Logo";
+import { HeroConnections } from "@/components/site/HeroConnections";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -36,7 +35,7 @@ function Index() {
     <div className="min-h-screen">
       <Header />
       <main id="inicio">
-        <Hero />
+        <Hero formUrl={settings?.general_form_url} />
         <About />
         <Audiences settings={settings} />
         <Results />
@@ -59,61 +58,26 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
   );
 }
 
-function Hero() {
+function Hero({ formUrl }: { formUrl?: string | null | undefined }) {
   return (
-    <section className="relative overflow-hidden border-b bg-primary text-primary-foreground">
-      <div aria-hidden className="hero-glow absolute inset-0" />
-      <div className="container-site relative grid items-center gap-8 py-12 sm:py-16 md:grid-cols-[1.15fr_1fr] md:py-20">
-        <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-highlight/40 bg-primary-foreground/5 px-3 py-1.5 text-xs font-semibold text-highlight backdrop-blur">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-highlight opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-highlight" />
-            </span>
-            Ecossistema de inovação · Alagoas
+    <section className="sururu-hero bg-primary text-primary-foreground" aria-labelledby="hero-title">
+      <div className="container-site hero-editorial">
+        <div className="hero-topline"><span>REDE SURURU</span><span>ALAGOAS <span aria-hidden="true">↗</span></span></div>
+        <h1 id="hero-title" className="hero-title">
+          Quantas <span className="text-highlight">oportunidades</span><br className="hidden sm:block" /> ainda não chegaram até você?
+        </h1>
+        <HeroConnections />
+        <div className="hero-bottomline">
+          <p className="hero-description">
+            A Rede Sururu aproxima estudantes e professores das oportunidades de ciência, formação e inovação em Alagoas.
           </p>
-          <h1 className="mt-4 text-[1.75rem] font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
-            Conectando a comunidade acadêmica às oportunidades de{" "}
-            <span className="relative whitespace-nowrap">
-              inovação
-              <span aria-hidden className="absolute inset-x-0 -bottom-1 h-1.5 rounded-full bg-highlight" />
-            </span>
-            .
-          </h1>
-          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-primary-foreground/80 sm:text-base">
-            A REDE SURURU aproxima estudantes, professores, profissionais e instituições para fortalecer as conexões
-            entre educação, ciência, tecnologia, impacto e inovação em Alagoas.
-          </p>
-          <p className="mt-3 max-w-xl text-sm text-primary-foreground/65">
-            A iniciativa começa no ecossistema alagoano, com a perspectiva de ampliar sua atuação para outros
-            territórios no futuro.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild size="lg" variant="highlight"><a href="#participar">Quero participar</a></Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-              <a href="#resultados">Conheça os resultados</a>
+          <div className="hero-actions">
+            <ExternalCta href={formUrl} size="lg" variant="highlight">Quero participar</ExternalCta>
+            <Button asChild size="lg" variant="ghost" className="hero-results">
+              <a href="#resultados">Conheça os resultados <span aria-hidden="true">↓</span></a>
             </Button>
           </div>
         </div>
-        <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-2xl">
-          <img
-            src={heroImage}
-            alt="Rede de pontos luminosos conectados, remetendo ao ecossistema de inovação"
-            width={1024}
-            height={768}
-            className="h-auto w-full"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/90 to-transparent"
-          />
-          <figcaption className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-3">
-            <span className="rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur">
-              Educação · Ciência · Tecnologia · Impacto
-            </span>
-            <Logo className="hidden h-6 w-auto shrink-0 drop-shadow sm:block" />
-          </figcaption>
-        </figure>
       </div>
     </section>
   );
