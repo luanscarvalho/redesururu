@@ -6,7 +6,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
-import { HeroTerritory } from "@/components/site/HeroTerritory";
+import heroScene from "@/assets/hero-innovation-scene.jpg";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -61,9 +61,10 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
 function Hero() {
   return (
     <section className="sururu-hero border-b">
+      <img className="hero-scene" src={heroScene} width={1536} height={1024} alt="Cena ilustrativa de um planeta com livros, ciência e espaços universitários integrado a uma paisagem de inovação" fetchPriority="high" />
+      <div className="hero-scene-shade" aria-hidden="true" />
       <div className="container-site hero-composition">
         <div className="hero-stage">
-          <HeroTerritory />
           <h1 className="hero-title font-bold">
             <span className="hero-line">Conectando a</span>{" "}
             <span className="hero-line">comunidade acadêmica</span>{" "}
