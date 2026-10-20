@@ -6,7 +6,8 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
-import heroScene from "@/assets/hero-alagoas-maceio.jpg";
+import heroScene from "@/assets/maceio-coast.jpg.asset.json";
+import { HeroTerritory } from "@/components/site/HeroTerritory";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -61,8 +62,9 @@ function SectionHead({ eyebrow, title, children }: { eyebrow: string; title: str
 function Hero() {
   return (
     <section className="sururu-hero border-b">
-      <img className="hero-scene" src={heroScene} width={1264} height={848} alt="Composição com a silhueta de Alagoas em verde e amarelo sobre o litoral de Maceió, com mar turquesa, praia, coqueiros e prédios da orla" fetchPriority="high" />
+      <img className="hero-scene" src={heroScene.url} width={850} height={560} alt="Litoral de Maceió, com mar turquesa, praia, coqueiros e prédios da orla" fetchPriority="high" />
       <div className="hero-scene-shade" aria-hidden="true" />
+      <HeroTerritory />
       <div className="container-site hero-composition">
         <div className="hero-stage">
           <h1 className="hero-title font-bold">
