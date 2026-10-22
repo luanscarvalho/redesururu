@@ -155,7 +155,7 @@ function Audiences({ settings }: { settings?: import("@/lib/site-data").SiteSett
       text: "Compartilhe seus interesses, objetivos e oportunidades que gostaria de encontrar. Sua perspectiva ajuda a entender o que faz diferença para quem está na formação técnica, na graduação ou na pós-graduação.",
     },
     {
-      icon: BookOpen, title: "Você que ensina e pesquisa.", cta: "Sou professor(a)", href: settings?.teacher_form_url,
+      icon: BookOpen, title: "Você que ensina e/ou administra.", cta: "Sou professor(a)", href: settings?.teacher_form_url,
       tone: "border-t-primary",
       text: "Apresente suas áreas de atuação, pesquisas, projetos e possibilidades de colaboração. Se você possui uma iniciativa estruturada como empresa ou organização, com ou sem fins lucrativos, considere também o cadastro como profissional de instituição.",
     },
