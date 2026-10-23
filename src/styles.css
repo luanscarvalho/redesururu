@@ -116,6 +116,13 @@
     repeating-linear-gradient(-45deg, color-mix(in oklab, var(--accent) 9%, transparent) 0 1px, transparent 1px 22px);
 }
 
+/* About: real photo under the intro text, same soft shadow as the hero mosaic */
+.about-photo {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px -20px color-mix(in oklab, var(--primary) 50%, transparent);
+}
+
+
 /* Opening: light canvas, text left, photo card with floating chips, wide colored arcs behind. */
 .sururu-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--background); }
 .hero-bands { position: absolute; z-index: -1; inset: 0; pointer-events: none; }
