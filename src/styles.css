@@ -57,6 +57,7 @@
   --highlight: oklch(0.84 0.16 84);
   --highlight-foreground: oklch(0.31 0.08 252);
   --secondary: oklch(0.94 0.02 184);
+  --transition-contour: color-mix(in oklab, var(--accent) 28%, var(--secondary));
   --secondary-foreground: oklch(0.36 0.07 200);
   --muted: oklch(0.94 0.01 95);
   --muted-foreground: oklch(0.47 0.03 250);
@@ -123,15 +124,12 @@
 }
 
 
-/* Opening: light canvas, text left, photo card with floating chips, wide colored arcs behind. */
+/* The broad Bézier boundary flows into the full-width about background. */
 .sururu-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--background); }
-.hero-bands { position: absolute; z-index: -1; inset: 0; pointer-events: none; }
-.band { position: absolute; left: 50%; width: 260%; aspect-ratio: 1; border-radius: 50%; transform: translateX(-50%); }
-.band-1 { top: 400px; background: var(--highlight); }
-.band-2 { top: 435px; background: var(--accent); }
-.band-3 { top: 475px; background: var(--primary); }
-.band-4 { top: 520px; background: var(--surface); }
-.band-5 { top: 540px; background: var(--background); }
+.hero-transition { position: absolute; z-index: -1; bottom: -1px; left: 0; width: 100%; height: 220px; pointer-events: none; }
+.hero-transition-area { fill: var(--secondary); }
+.hero-transition-contour { fill: var(--transition-contour); }
+.sururu-about { background: var(--secondary); }
 .hero-composition { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-block: 48px 110px; }
 .hero-text { position: relative; }
 .hero-title { font-size: 42px; line-height: 1.12; letter-spacing: -0.01em; color: var(--primary); }
@@ -154,8 +152,7 @@
   .hero-composition { grid-template-columns: 1fr; gap: 28px; padding-block: 28px 56px; }
   .hero-title { font-size: 34px; }
   .hero-card { max-width: 320px; }
-  .band { width: 420%; }
-  .band-1 { top: 520px; } .band-2 { top: 550px; } .band-3 { top: 585px; } .band-4 { top: 625px; } .band-5 { top: 642px; }
+  .hero-transition { height: 150px; }
 }
 @media (max-width: 639px) {
   .hero-text { padding: 4px 0; background: transparent; }
@@ -163,8 +160,7 @@
   .hero-main-copy { font-size: 15px; }
   .hero-card { max-width: 270px; }
   .chip-a { right: -8px; } .chip-b { left: -10px; } .chip-c { right: -10px; }
-  .band { width: 600%; }
-  .band-1 { top: 620px; } .band-2 { top: 645px; } .band-3 { top: 675px; } .band-4 { top: 710px; } .band-5 { top: 725px; }
+  .hero-transition { width: 145%; left: -20%; height: 120px; }
 }
 @media (max-width: 359px) {
   .hero-title { font-size: 25px; }

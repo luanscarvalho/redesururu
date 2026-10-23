@@ -71,10 +71,10 @@ function Hero() {
   ];
   return (
     <section className="sururu-hero">
-      <div className="hero-bands" aria-hidden="true">
-        <span className="band band-1" /><span className="band band-2" /><span className="band band-3" />
-        <span className="band band-4" /><span className="band band-5" />
-      </div>
+      <svg className="hero-transition" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path className="hero-transition-contour" d="M0 28 C175 112 346 158 590 180 C354 178 172 136 0 72 Z" />
+        <path className="hero-transition-area" d="M0 72 C225 159 470 194 730 185 C1020 182 1250 127 1440 42 L1440 240 L0 240 Z" />
+      </svg>
       <div className="container-site hero-composition">
         <div className="hero-text">
           <h1 className="hero-title font-bold">
@@ -136,7 +136,8 @@ function About() {
   ];
 
   return (
-    <section id="projeto" className="container-site py-14 sm:py-20">
+    <section id="projeto" className="sururu-about">
+      <div className="container-site py-14 sm:py-20">
       <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
         <div className="md:flex md:flex-col">
           <SectionHead eyebrow="O que é a REDE SURURU?" title="Mais conexões, mais oportunidades.">
@@ -184,6 +185,7 @@ function About() {
             ))}
           </ol>
         </div>
+      </div>
       </div>
     </section>
   );
