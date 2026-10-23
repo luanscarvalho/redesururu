@@ -10,7 +10,7 @@ import photoTelescope from "@/assets/sinpete-telescopio.jpg.asset.json";
 import photoModel from "@/assets/sinpete-maquete.jpg.asset.json";
 import photoTech from "@/assets/sinpete-tecnologia.jpg.asset.json";
 import photoEvent from "@/assets/inovacao-evento.jpg.asset.json";
-import photoBooth from "@/assets/sinpete-estande.jpg.asset.json";
+import photoSebrae from "@/assets/sebrae-alagoas.png.asset.json";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -151,12 +151,12 @@ function About() {
             </p>
           </SectionHead>
           <img
-            className="about-photo mt-6 aspect-[16/10] w-full object-cover"
-            src={photoBooth.url}
-            width={1920}
-            height={1280}
+            className="about-photo mt-6 aspect-[16/9] w-full object-cover"
+            src={photoSebrae.url}
+            width={1536}
+            height={868}
             loading="lazy"
-            alt="Estudantes e visitantes reunidos em estande universitário com pôster sobre tartarugas marinhas durante feira de ciência"
+            alt="Palco com painel “Ecossistema Local de Inovação do Nordeste” e público sentado em pufes coloridos durante evento de inovação"
           />
         </div>
         <div>
