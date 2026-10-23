@@ -73,12 +73,20 @@ function Hero() {
     <section className="sururu-hero">
       <svg className="hero-transition" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs>
-          <linearGradient id="sururu-transition-gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop className="transition-stop-teal" offset="0" />
+          <linearGradient id="sururu-transition-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="0" y2="240">
+            <stop className="transition-stop-warm" offset="0" />
+            <stop className="transition-stop-light" offset="0.42" />
+            <stop className="transition-stop-mid" offset="0.73" />
             <stop className="transition-stop-deep" offset="1" />
           </linearGradient>
+          <filter id="sururu-transition-soften" x="-10%" y="-30%" width="120%" height="160%">
+            <feGaussianBlur stdDeviation="12" />
+          </filter>
         </defs>
-        <path className="hero-transition-area" d="M0 72 C225 159 470 194 730 185 C1020 182 1250 127 1440 42 L1440 240 L0 240 Z" />
+        <path className="hero-transition-area" filter="url(#sururu-transition-soften)" d="M-40 60 C225 159 470 194 730 185 C1020 182 1250 127 1480 28 L1480 300 L-40 300 Z" />
+        <path className="hero-transition-area" d="M0 220 L1440 220 L1440 240 L0 240 Z" />
+        <path className="hero-transition-line hero-transition-line-teal" d="M-20 104 C230 196 450 205 690 197 C1000 187 1190 153 1460 98" />
+        <path className="hero-transition-line hero-transition-line-yellow" d="M-20 158 C235 227 480 224 760 209 C1040 194 1260 165 1460 128" />
       </svg>
       <div className="container-site hero-composition">
         <div className="hero-text">
