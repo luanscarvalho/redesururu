@@ -141,6 +141,8 @@
   color: var(--primary-foreground);
 }
 .sururu-about .text-primary { color: var(--primary-foreground); }
+.sururu-about ol,
+.sururu-about li { border-color: var(--about-border); }
 .sururu-about .eyebrow,
 .sururu-about .text-accent { color: var(--highlight); }
 .hero-composition { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-block: 48px 110px; }

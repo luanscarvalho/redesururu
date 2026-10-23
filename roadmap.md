@@ -1,5 +1,5 @@
 # Current task
-- [ ] Refine the existing curve to a seamless teal-to-navy gradient and dark about section with readable light text; preserve structure and verify desktop/mobile.
+- [x] Refine the existing curve to a seamless teal-to-navy gradient and dark about section with readable light text; preserve structure and verify desktop/mobile.
 - [x] Replace the stacked hero stripes with a continuous organic transition integrated into the about background, following the newly supplied reference's broad central dip; preserve content and verify desktop/mobile.
 - [x] Place the uploaded innovation-event photo under the "O que é a REDE SURURU?" text to fill the empty space; verify desktop and mobile.
 - [x] Move the maquete photo to the "Ciência" chip and place the uploaded innovation-event photo under "Inovação"; verify desktop and mobile.
