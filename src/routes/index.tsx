@@ -107,11 +107,33 @@ function Hero() {
 }
 
 function About() {
-  const fronts = [
-    { n: "01", t: "Conectar", d: "Aproximar pessoas, instituições e oportunidades." },
-    { n: "02", t: "Informar", d: "Compartilhar editais, eventos, programas, bolsas e outras iniciativas." },
-    { n: "03", t: "Articular", d: "Identificar demandas e estimular ações mais alinhadas às necessidades da comunidade." },
+  const fronts: { n: string; t: string; d: string; points?: string[] }[] = [
+    {
+      n: "01",
+      t: "Mobilização",
+      d: "Apresentar o ecossistema por meio de oficinas, palestras e eventos já existentes e outras ações.",
+    },
+    {
+      n: "02",
+      t: "Escuta",
+      d: "Formulário que vai além de um cadastro: identificamos interesses, necessidades, competências e oportunidades, visando atuar e realizar melhores conexões.",
+    },
+    {
+      n: "03",
+      t: "Integração",
+      d: "Canal no WhatsApp, não para ser mais um grupo sem finalidade concreta, mas para que os atores possam divulgar oportunidades e que possamos estimular a participação nas ações. Além de outros formatos de promoção, como newsletter e encontros.",
+    },
+    {
+      n: "04",
+      t: "Articulação",
+      d: "Em vez de criar do zero ações para cada demanda, com as informações que colhemos:",
+      points: [
+        "Conectamos quem já pode respondê-las.",
+        "A partir das necessidades, estimulamos a criação de iniciativas.",
+      ],
+    },
   ];
+
   return (
     <section id="projeto" className="container-site py-14 sm:py-20">
       <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
@@ -135,8 +157,19 @@ function About() {
                 <div>
                   <p className="font-semibold">{f.t}</p>
                   <p className="text-sm text-muted-foreground">{f.d}</p>
+                  {f.points && (
+                    <ol className="mt-2 space-y-1.5">
+                      {f.points.map((p, i) => (
+                        <li key={p} className="flex gap-2 text-sm text-muted-foreground">
+                          <span className="font-semibold text-accent tabular-nums">{i + 1}</span>
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
                 </div>
               </li>
+
             ))}
           </ol>
         </div>
