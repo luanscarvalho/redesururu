@@ -138,7 +138,7 @@ function About() {
   return (
     <section id="projeto" className="container-site py-14 sm:py-20">
       <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
-        <div>
+        <div className="md:flex md:flex-col">
           <SectionHead eyebrow="O que é a REDE SURURU?" title="Mais conexões, mais oportunidades.">
             <p>
               A REDE SURURU é uma iniciativa independente que busca aproximar a comunidade acadêmica das oportunidades
@@ -151,7 +151,7 @@ function About() {
             </p>
           </SectionHead>
           <img
-            className="about-photo mt-6 aspect-[16/9] w-full object-cover"
+            className="about-photo mt-6 aspect-[16/9] w-full object-cover md:aspect-auto md:h-full md:min-h-0 md:flex-1"
             src={photoSebrae.url}
             width={1536}
             height={868}
