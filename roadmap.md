@@ -1,5 +1,5 @@
 # Current task
-- [ ] Place the uploaded innovation-event photo under the "O que é a REDE SURURU?" text to fill the empty space; verify desktop and mobile.
+- [x] Place the uploaded innovation-event photo under the "O que é a REDE SURURU?" text to fill the empty space; verify desktop and mobile.
 - [x] Move the maquete photo to the "Ciência" chip and place the uploaded innovation-event photo under "Inovação"; verify desktop and mobile.
 - [x] Build a side-by-side gallery of the hero versions already made, so the user can pick one.
 - [x] Replace the rejected openings with a new connected landscape based on the supplied reference, without a planet or map.
