@@ -72,8 +72,8 @@ function Hero() {
   return (
     <section className="sururu-hero">
       <svg className="hero-transition" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path className="hero-transition-contour" d="M0 20 C150 128 285 194 480 178 C278 216 128 168 0 78 Z" />
-        <path className="hero-transition-area" d="M0 78 C190 214 350 216 560 158 C785 96 852 92 1055 130 C1215 160 1350 126 1440 52 L1440 240 L0 240 Z" />
+        <path className="hero-transition-contour" d="M0 28 C175 112 346 158 590 180 C354 178 172 136 0 72 Z" />
+        <path className="hero-transition-area" d="M0 72 C225 159 470 194 730 185 C1020 182 1250 127 1440 42 L1440 240 L0 240 Z" />
       </svg>
       <div className="container-site hero-composition">
         <div className="hero-text">
