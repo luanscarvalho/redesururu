@@ -10,6 +10,7 @@ import photoTelescope from "@/assets/sinpete-telescopio.jpg.asset.json";
 import photoModel from "@/assets/sinpete-maquete.jpg.asset.json";
 import photoTech from "@/assets/sinpete-tecnologia.jpg.asset.json";
 import photoEvent from "@/assets/inovacao-evento.jpg.asset.json";
+import photoBooth from "@/assets/sinpete-estande.jpg.asset.json";
 import {
   METRIC_FIELDS, publishedMetricsQuery, settingsQuery, hasAnyMetric, formatDate,
 } from "@/lib/site-data";
@@ -137,17 +138,27 @@ function About() {
   return (
     <section id="projeto" className="container-site py-14 sm:py-20">
       <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
-        <SectionHead eyebrow="O que é a REDE SURURU?" title="Mais conexões, mais oportunidades.">
-          <p>
-            A REDE SURURU é uma iniciativa independente que busca aproximar a comunidade acadêmica das oportunidades
-            e dos atores do ecossistema de inovação de Alagoas.
-          </p>
-          <p className="mt-3">
-            Além de divulgar oportunidades, a rede busca compreender os interesses, as necessidades e os desafios de
-            quem estuda, ensina, pesquisa e desenvolve iniciativas no território. Essas informações podem contribuir
-            para orientar ações, aproximar parceiros e identificar possibilidades de colaboração.
-          </p>
-        </SectionHead>
+        <div>
+          <SectionHead eyebrow="O que é a REDE SURURU?" title="Mais conexões, mais oportunidades.">
+            <p>
+              A REDE SURURU é uma iniciativa independente que busca aproximar a comunidade acadêmica das oportunidades
+              e dos atores do ecossistema de inovação de Alagoas.
+            </p>
+            <p className="mt-3">
+              Além de divulgar oportunidades, a rede busca compreender os interesses, as necessidades e os desafios de
+              quem estuda, ensina, pesquisa e desenvolve iniciativas no território. Essas informações podem contribuir
+              para orientar ações, aproximar parceiros e identificar possibilidades de colaboração.
+            </p>
+          </SectionHead>
+          <img
+            className="about-photo mt-6 aspect-[16/10] w-full object-cover"
+            src={photoBooth.url}
+            width={1920}
+            height={1280}
+            loading="lazy"
+            alt="Estudantes e visitantes reunidos em estande universitário com pôster sobre tartarugas marinhas durante feira de ciência"
+          />
+        </div>
         <div>
           <p className="text-sm font-semibold text-primary">Como pretendemos atuar</p>
           <ol className="mt-3 divide-y border-y">
