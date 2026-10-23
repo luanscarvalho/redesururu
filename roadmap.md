@@ -1,4 +1,5 @@
 # Current task
+- [ ] Replace the stacked hero stripes with a continuous organic transition integrated into the about background; preserve content and verify desktop/mobile.
 - [x] Place the uploaded innovation-event photo under the "O que é a REDE SURURU?" text to fill the empty space; verify desktop and mobile.
 - [x] Move the maquete photo to the "Ciência" chip and place the uploaded innovation-event photo under "Inovação"; verify desktop and mobile.
 - [x] Build a side-by-side gallery of the hero versions already made, so the user can pick one.
