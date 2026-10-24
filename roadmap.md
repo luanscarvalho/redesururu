@@ -1,4 +1,5 @@
 # Current task
+- [x] Remove both colored hero-to-about lines and use only the existing organic curve's soft warm-white-to-purple blend, without changing content or spacing.
 - [x] Replace the territory's abstract network with the real Alagoas silhouette and connected boundary/interior nodes; remove the detached dotted mark and preserve the surrounding section.
 - [x] Create a perceptible light-to-purple organic transition with two fine varied teal/yellow curves and a deep-purple about background; verify both sections together on desktop/mobile.
 - [x] Refine the existing curve to a seamless teal-to-navy gradient and dark about section with readable light text; preserve structure and verify desktop/mobile.

@@ -134,13 +134,12 @@
 .sururu-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--background); }
 .hero-transition { position: absolute; z-index: -1; bottom: -1px; left: 0; width: 100%; height: 260px; pointer-events: none; }
 .hero-transition-area { fill: url(#sururu-transition-gradient); }
+.hero-transition-mask { mask-type: alpha; }
+.hero-transition-mask path { fill: var(--surface); }
 .transition-stop-warm { stop-color: var(--background); }
 .transition-stop-light { stop-color: var(--innovation-light); }
 .transition-stop-mid { stop-color: var(--innovation-mid); }
 .transition-stop-deep { stop-color: var(--transition-end); }
-.hero-transition-line { fill: none; stroke-linecap: round; }
-.hero-transition-line-teal { stroke: var(--accent); stroke-width: 9; }
-.hero-transition-line-yellow { stroke: var(--highlight); stroke-width: 3; }
 .sururu-about {
   --foreground: var(--primary-foreground);
   --muted-foreground: var(--about-copy);
