@@ -342,7 +342,7 @@ function Territory() {
           respeitando as características e as necessidades de cada contexto.
         </p>
       </SectionHead>
-      <NetworkArt className="mx-auto w-full max-w-sm" label="Ilustração de pontos conectados em Alagoas, com uma conexão tracejada indicando expansão futura" />
+      <NetworkArt className="mx-auto w-full max-w-lg" label="Mapa de Alagoas com pontos conectados no contorno geográfico e no interior do estado" />
     </section>
   );
 }
