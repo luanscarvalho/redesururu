@@ -165,8 +165,13 @@
 .acting-front-number { color: var(--highlight); }
 .acting-front-title { flex: 1; font-size: 16px; font-weight: 600; line-height: 24px; }
 .acting-front-trigger > svg { color: var(--about-copy); }
-.acting-front-description { margin-left: 48px; padding: 0 14px 14px 0; font-size: 14px; line-height: 20px; color: var(--about-copy); opacity: 0; visibility: hidden; transition: opacity 180ms ease, visibility 180ms; }
-.acting-front[data-open="true"] .acting-front-description { opacity: 1; visibility: visible; }
+/* No celular a descrição expande dentro da caixa; no desktop o espaço fica reservado */
+.acting-front-description { display: grid; grid-template-rows: 0fr; margin-left: 48px; padding: 0 14px 14px 0; font-size: 14px; line-height: 20px; color: var(--about-copy); opacity: 0; visibility: hidden; transition: grid-template-rows 180ms ease, opacity 180ms ease, visibility 180ms; }
+.acting-front-description-inner { min-height: 0; overflow: hidden; }
+.acting-front[data-open="true"] .acting-front-description { grid-template-rows: 1fr; opacity: 1; visibility: visible; }
+@media (min-width: 768px) {
+  .acting-front-description { grid-template-rows: 1fr; transition: opacity 180ms ease, visibility 180ms; }
+}
 @media (hover: hover) and (pointer: fine) {
   .sururu-about .acting-front:hover { background: var(--front-active); border-color: var(--front-border-active); }
 }
