@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 
 const LINKS = [
-  { href: "#projeto", label: "O projeto" },
+  { href: "#projeto", label: "A Rede" },
   { href: "#participar", label: "Quem pode participar" },
   { href: "#resultados", label: "Resultados" },
   { href: "#contato", label: "Contato" },
