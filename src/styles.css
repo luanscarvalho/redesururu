@@ -63,6 +63,10 @@
   --transition-end: #452579;
   --about-copy: color-mix(in oklab, var(--primary-foreground) 84%, var(--innovation-deep));
   --about-border: color-mix(in oklab, var(--primary-foreground) 18%, var(--innovation-deep));
+  --front-background: color-mix(in oklab, var(--innovation-mid) 15%, var(--innovation-deep));
+  --front-active: color-mix(in oklab, var(--innovation-mid) 29%, var(--innovation-deep));
+  --front-border: color-mix(in oklab, var(--innovation-light) 30%, var(--innovation-deep));
+  --front-border-active: color-mix(in oklab, var(--innovation-light) 55%, var(--innovation-deep));
   --about-gradient: linear-gradient(to bottom, var(--transition-end), var(--innovation-deep) 300px);
   --secondary-foreground: oklch(0.36 0.07 200);
   --muted: oklch(0.94 0.01 95);
@@ -153,6 +157,22 @@
 .sururu-about li { border-color: var(--about-border); }
 .sururu-about .eyebrow,
 .sururu-about .text-accent { color: var(--highlight); }
+.acting-fronts { display: grid; gap: 8px; }
+.sururu-about .acting-front { border: 1px solid var(--front-border); border-radius: 6px; background: var(--front-background); transition: background-color 180ms ease, border-color 180ms ease; }
+.sururu-about .acting-front[data-open="true"] { background: var(--front-active); border-color: var(--front-border-active); }
+.sururu-about .acting-front-trigger { display: flex; width: 100%; height: auto; min-height: 44px; justify-content: flex-start; gap: 16px; padding: 12px 14px 2px; color: var(--primary-foreground); background: transparent; border-radius: 5px; white-space: normal; text-align: left; }
+.acting-front-trigger:focus-visible { outline: 2px solid var(--highlight); outline-offset: 3px; }
+.acting-front-number { color: var(--highlight); }
+.acting-front-title { flex: 1; font-size: 16px; font-weight: 600; line-height: 24px; }
+.acting-front-trigger > svg { color: var(--about-copy); }
+.acting-front-description { margin-left: 48px; padding: 0 14px 14px 0; font-size: 14px; line-height: 20px; color: var(--about-copy); opacity: 0; visibility: hidden; transition: opacity 180ms ease, visibility 180ms; }
+.acting-front[data-open="true"] .acting-front-description { opacity: 1; visibility: visible; }
+@media (hover: hover) and (pointer: fine) {
+  .sururu-about .acting-front:hover { background: var(--front-active); border-color: var(--front-border-active); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sururu-about .acting-front, .acting-front-description { transition: none; }
+}
 .hero-composition { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-block: 48px 110px; }
 .hero-text { position: relative; }
 .hero-title { font-size: 42px; line-height: 1.12; letter-spacing: -0.01em; color: var(--primary); }
