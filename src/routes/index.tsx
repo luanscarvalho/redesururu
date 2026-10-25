@@ -7,6 +7,7 @@ import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
 import { ActingFront } from "@/components/site/ActingFront";
+import { ParticipationPanel } from "@/components/site/ParticipationPanel";
 import photoTelescope from "@/assets/sinpete-telescopio.jpg.asset.json";
 import photoModel from "@/assets/sinpete-maquete.jpg.asset.json";
 import photoTech from "@/assets/sinpete-tecnologia.jpg.asset.json";
@@ -186,39 +187,29 @@ function About() {
   );
 }
 
-type Aud = { icon: LucideIcon; title: string; text: string; cta: string; href?: string | null | undefined; tone: string };
+type Aud = { n: string; icon: LucideIcon; title: string; text: string; cta: string; href?: string | null | undefined };
 
 function Audiences({ settings }: { settings?: import("@/lib/site-data").SiteSettings | null | undefined }) {
   const items: Aud[] = [
     {
-      icon: GraduationCap, title: "Você que estuda.", cta: "Sou estudante", href: settings?.student_form_url,
-      tone: "border-t-accent",
-      text: "Compartilhe seus interesses, objetivos e oportunidades que gostaria de encontrar. Sua perspectiva ajuda a entender o que faz diferença para quem está na formação técnica, na graduação ou na pós-graduação.",
+      n: "01", icon: GraduationCap, title: "Você que estuda", cta: "Sou estudante", href: settings?.student_form_url,
+      text: "Estuda no ensino técnico, na graduação ou na pós-graduação? Encontre oportunidades e compartilhe o que você busca.",
     },
     {
-      icon: BookOpen, title: "Você que ensina e/ou administra.", cta: "Sou professor(a)", href: settings?.teacher_form_url,
-      tone: "border-t-primary",
-      text: "Apresente suas áreas de atuação, pesquisas, projetos e possibilidades de colaboração. Se você possui uma iniciativa estruturada como empresa ou organização, com ou sem fins lucrativos, considere também o cadastro como profissional de instituição.",
+      n: "02", icon: BookOpen, title: "Você que ensina ou administra em uma instituição de ensino", cta: "Sou professor(a) ou gestor(a)", href: settings?.teacher_form_url,
+      text: "É professor(a), pesquisador(a) ou atua na gestão de uma instituição de ensino técnico ou superior? Compartilhe projetos, interesses e possibilidades de colaboração.",
     },
     {
-      icon: Building2, title: "Você que atua em uma instituição.", cta: "Represento uma instituição", href: settings?.institution_form_url,
-      tone: "border-t-highlight",
-      text: "Você não precisa ser gestor ou líder da área. Pode contribuir compartilhando oportunidades, estabelecendo contatos ou aproximando sua instituição da comunidade acadêmica.",
+      n: "03", icon: Building2, title: "Você que atua em uma instituição do ecossistema de inovação", cta: "Represento uma instituição", href: settings?.institution_form_url,
+      text: "Trabalha em uma organização pública ou privada ligada à inovação, ciência, tecnologia, empreendedorismo ou impacto? Ajude a aproximar iniciativas e oportunidades da comunidade acadêmica.",
     },
   ];
   return (
     <section id="participar" className="border-y bg-surface py-14 sm:py-20">
       <div className="container-site">
         <SectionHead eyebrow="Quem pode participar?" title="Cada pessoa contribui de um jeito." />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {items.map((a) => (
-            <article key={a.cta} className={`flex flex-col rounded-xl border border-t-4 bg-background p-5 ${a.tone}`}>
-              <a.icon className="h-5 w-5 text-accent" aria-hidden />
-              <h3 className="mt-3 text-lg font-bold">{a.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
-              <ExternalCta href={a.href} className="mt-5 self-start">{a.cta}</ExternalCta>
-            </article>
-          ))}
+        <div className="participation-panels mt-8">
+          {items.map((a) => <ParticipationPanel key={a.n} {...a} />)}
         </div>
       </div>
     </section>
