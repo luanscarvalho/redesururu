@@ -165,8 +165,13 @@
 .acting-front-number { color: var(--highlight); }
 .acting-front-title { flex: 1; font-size: 16px; font-weight: 600; line-height: 24px; }
 .acting-front-trigger > svg { color: var(--about-copy); }
-.acting-front-description { margin-left: 48px; padding: 0 14px 14px 0; font-size: 14px; line-height: 20px; color: var(--about-copy); opacity: 0; visibility: hidden; transition: opacity 180ms ease, visibility 180ms; }
-.acting-front[data-open="true"] .acting-front-description { opacity: 1; visibility: visible; }
+/* No celular a descrição expande dentro da caixa; no desktop o espaço fica reservado */
+.acting-front-description { display: grid; grid-template-rows: 0fr; margin-left: 48px; padding: 0 14px 14px 0; font-size: 14px; line-height: 20px; color: var(--about-copy); opacity: 0; visibility: hidden; transition: grid-template-rows 180ms ease, opacity 180ms ease, visibility 180ms; }
+.acting-front-description-inner { min-height: 0; overflow: hidden; }
+.acting-front[data-open="true"] .acting-front-description { grid-template-rows: 1fr; opacity: 1; visibility: visible; }
+@media (min-width: 768px) {
+  .acting-front-description { grid-template-rows: 1fr; transition: opacity 180ms ease, visibility 180ms; }
+}
 @media (hover: hover) and (pointer: fine) {
   .sururu-about .acting-front:hover { background: var(--front-active); border-color: var(--front-border-active); }
 }
@@ -206,10 +211,13 @@
 }
 .participation-panel[data-open="true"] .participation-body-inner { opacity: 1; visibility: visible; padding-bottom: 18px; }
 @media (min-width: 768px) {
-  .participation-panels { grid-template-columns: 1fr 1.18fr 1.22fr; align-items: stretch; }
-  /* Área de descrição reservada: abrir um painel não desloca a página no desktop */
-  .participation-body { grid-template-rows: 1fr; }
-  .participation-body-inner { min-height: 12.5rem; }
+  .participation-panels { grid-template-columns: 1fr 1.18fr 1.22fr; align-items: start; }
+  /* Desktop: cartões compactos; o conteúdo abre em camada sobreposta, sem deslocar a página */
+  .participation-panel { position: relative; }
+  .participation-panel[data-open="true"] { z-index: 2; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+  .participation-body { display: block; position: absolute; top: 100%; left: -1px; right: -1px; background: inherit; border: 1px solid var(--border); border-top: 0; border-radius: 0 0 12px 12px; transition: none; opacity: 0; visibility: hidden; }
+  .participation-panel[data-open="true"] .participation-body { border-color: var(--highlight); opacity: 1; visibility: visible; }
+  .participation-body-inner { padding: 14px 18px 18px; }
 }
 @media (hover: hover) and (pointer: fine) {
   .participation-panel:hover { border-top-color: var(--accent); }

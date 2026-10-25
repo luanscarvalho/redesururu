@@ -23,13 +23,15 @@ export function ActingFront({ n, t, d, points }: ActingFrontProps) {
         {open ? <Minus aria-hidden="true" /> : <Plus aria-hidden="true" />}
       </Button>
       <div id={descriptionId} className="acting-front-description" aria-hidden={!open}>
-        <p>{d}</p>
-        {points && <ol className="mt-2 space-y-1.5">
-          {points.map((point, index) => <li key={point} className="flex gap-2">
-            <span className="acting-front-number font-semibold tabular-nums">{index + 1}</span>
-            <span>{point}</span>
-          </li>)}
-        </ol>}
+        <div className="acting-front-description-inner">
+          <p>{d}</p>
+          {points && <ol className="mt-2 space-y-1.5">
+            {points.map((point, index) => <li key={point} className="flex gap-2">
+              <span className="acting-front-number font-semibold tabular-nums">{index + 1}</span>
+              <span>{point}</span>
+            </li>)}
+          </ol>}
+        </div>
       </div>
     </li>
   );
