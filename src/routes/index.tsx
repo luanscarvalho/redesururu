@@ -6,6 +6,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NetworkArt } from "@/components/site/NetworkArt";
 import { ExternalCta } from "@/components/site/ExternalCta";
+import { ActingFront } from "@/components/site/ActingFront";
 import photoTelescope from "@/assets/sinpete-telescopio.jpg.asset.json";
 import photoModel from "@/assets/sinpete-maquete.jpg.asset.json";
 import photoTech from "@/assets/sinpete-tecnologia.jpg.asset.json";
@@ -175,27 +176,8 @@ function About() {
         </div>
         <div>
           <p className="text-sm font-semibold text-primary">Como pretendemos atuar</p>
-          <ol className="mt-3 divide-y border-y">
-            {fronts.map((f) => (
-              <li key={f.n} className="flex gap-4 py-4">
-                <span className="text-sm font-semibold text-accent tabular-nums">{f.n}</span>
-                <div>
-                  <p className="font-semibold">{f.t}</p>
-                  <p className="text-sm text-muted-foreground">{f.d}</p>
-                  {f.points && (
-                    <ol className="mt-2 space-y-1.5">
-                      {f.points.map((p, i) => (
-                        <li key={p} className="flex gap-2 text-sm text-muted-foreground">
-                          <span className="font-semibold text-accent tabular-nums">{i + 1}</span>
-                          <span>{p}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  )}
-                </div>
-              </li>
-
-            ))}
+          <ol className="acting-fronts mt-3">
+            {fronts.map((f) => <ActingFront key={f.n} {...f} />)}
           </ol>
         </div>
       </div>

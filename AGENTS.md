@@ -16,3 +16,4 @@
 - Keep hero-to-about background geometry in the hero's decorative Bézier SVG and shared CSS tokens, with a full-width about wrapper around its unchanged content container; do not couple it to the territory section. Any future geographic artwork must use precise vector geometry, not AI-generated outlines.
 - Keep /galeria as a client navigation redirect to / after retiring comparison options, preserving the existing preview URL.
 - Build the territory network from the attributed state boundary data in a browser-safe geometry module; sample boundary/interior nodes and validate local links against the polygon to preserve geographic fidelity.
+- Acting-front disclosures reserve their complete content in normal flow and reveal only opacity/visibility; pointer previews and pinned click state must never change layout dimensions.
